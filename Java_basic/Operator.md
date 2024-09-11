@@ -195,18 +195,54 @@ public class OperatorIncrement {
   3. 산술연산자 (+,-)
 
 
-4. 비교 연산자
+### 비교 연산자
 
   - 모든 비교 연산자의 결과는 반드시 boolean 형이여야 한다.
-  
+  - 등가비교 연산자는 모든 타입에서 사용이 가능하다.
+  - 대소비교 연산자는 숫자에서만 사용이 가능하다.
+    -- 참조형이나, boolean에서는 사용이 불가하다.
    
 ![image](https://github.com/user-attachments/assets/9629a8e0-3598-47b1-93c5-cec6ab1ed4cf)
 
 
+### 논리 연산자
+
+ - 논리 연산자는 주어진 논리식을 판단하여 참과 거짓을 결정한다.
+
+![image](https://github.com/user-attachments/assets/e9e473ab-b7f2-40f0-92d2-51585a78819a)
 
 
+![image](https://github.com/user-attachments/assets/1b73e657-bf56-4e26-ad79-19283a1899ac)
 
 
+### 삼항 연산자
+
+- ``` 변수 = 조건식 ?  true 일때 값 : false 일때 값;```
+
+```java
+
+public class OperatorConditionalTriple{
+  public static void main(String args[]) {
+    OperatorConditionalTriple sample = new OperatorConditionalTriple();
+    sample.doBlindDate(30);
+    sample.doBlindDate(80);    
+
+  }
+ 
+    public boolean doBlindDate(int point){
+        boolean doBlindDateFlag = false;
+        doBlindDateFlag = (point >= 80) ? true : false;
+        System.out.println(point + " : " + doBlindDateFlag);
+        return doBlindDateFlag;
+    }
+
+}
+
+// 결과
+// 30 : false
+// 80 : true
+
+```
 
 
 
