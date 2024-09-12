@@ -57,7 +57,8 @@ NoSQL은 관계형과는 다르게 데이터를 테이블이 아닌 컬렉션(co
 이러한 구조는 데이터를 유연하게 처리할 수 있으며, 확장성이 높습니다. 
 MongoDB, Redis, Firebase 등이 대표적인 NoSQL 입니다. 
 
-
+## 참조 블로그
+https://blog.naver.com/gi_balja/223028077537
 
 
 
