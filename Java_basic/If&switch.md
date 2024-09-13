@@ -167,10 +167,65 @@ public class ControlElseIf {
 ```
 
 
+# SWITCH
+
+- if else는 두가지 이상의 값을 비교하거나 단순히 true, false 여부만 확인하고자 할때 많이 사용한다.
+- 하나의 값을 여러분기로 비교해야 될 때는 switch 구문을 사용하는 것이 좋다.
+
+```java
+
+switch (조건식) { case value1:
+// 조건식의 결과 값이 value1일 때 실행되는 코드 break;
+case value2:
+// 조건식의 결과 값이 value2일 때 실행되는 코드 break;
+default:
+// 조건식의 결과 값이 위의 어떤 값에도 해당하지 않을 때 실행되는 코드
+}
+
+```
+
+- 조건식의 결과값이 어떤 case와 일치하면 해당 case의 코드를 실행한다.
+- break문은 현재 실행 중인 코드를 끝내고 switch문을 빠져나가게 하는 역할을 한다.
+- break문이 없으면 일치하는 case 이후의 모든 case 코드들이 순서대로 실행된다.
+- default는 조건식의 결과값이 모든 case의 값과 일치하지 않을때 실행된다.
+  - if문의 else와 같다.
+- if,else-if,else 구조와 동일하다.
+
+```java
+
+public class ControlSwitch {
+  public static void main(String args[]) {
+        ControlSwitch sample = new ControlSwitch();
+        sample.switchStatement(1);
+        sample.switchStatement(2);
+        sample.switchStatement(3);
+        sample.switchStatement(4);
+        sample.switchStatement(5);
+  }
+  
+  public void switchStatement(int numberOfwheel) {
+      switch(numberOfwheel) {
+          case 1: 
+              System.out.println(numberOfwheel + ": It is a one-wheel bicycle");
+              break;
+          case 2: 
+              System.out.println(numberOfwheel + ": It is a motorcycle or bicycle");
+              break;
+          case 3: 
+              System.out.println(numberOfwheel + ": It is a three-wheel car");
+              break;
+          case 4: 
+              System.out.println(numberOfwheel + ": It is a car");
+              break;
+          default:
+              System.out.println(numberOfwheel + ": It is an expensive car");
+              break;
+      }
+  }
+}
 
 
-
-
+```
 
 
 
