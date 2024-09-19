@@ -1,4 +1,3 @@
-
 ## Array - 배열
 
 - 하나의 변수안에 여러개의 값을 담을 수 있다.
@@ -82,7 +81,8 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out
 
 - 각 자료형의 기본값
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4d733e24-dba1-495a-87c4-243568c1610e/ecd64ade-2af4-486c-acca-629931f69ba7/029a9e67-7178-412c-9674-0017e2b6eebf.png)
+![image](https://github.com/user-attachments/assets/226a6da4-ef46-4e0b-aa64-ed54425d7fb9)
+
 
 그렇다면 참조 자료형 배열 생성시 기본값은 어떻게 될까?
 
@@ -181,25 +181,200 @@ public class MonthArray
 }
 ```
 
-배열의 길이를 아는 방법
+2차원 배열 
 
-- .length를 사용하면 됩니다.
+- 일반적으로 int 변수명[][]; 의 형식으로 선언한다.
+- 2차원 배열의 1번째 대괄호는 1차원 , 2번째 대괄호는 2차원이라고 한다.
 
 ```java
-public class Exam {
+2차원 배열에서 (예시) int arr[][]
+array[0] = int 배열이다.
+array[0][0] = int 값이다.
+```
 
-    public static void main(String[] args) {
+```java
+
+public class ArrayTwoDimension{
+  
+    public static void main(String[] args)
+    {
+        ArrayTwoDimension array = new ArrayTwoDimension();
+        array.twoDimensionArray();
+    }
+
+    public void twoDimensionArray(){
+        int [][] twoDim;
+        twoDim = new int[2][3];
+    }
+
+}
+```
+
+그림을 통해 2차원 배열을 알기 쉽게 보자면 아래와 같다.
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https://blog.kakaocdn.net/dn/cVimSC/btrJrgdOZw4/X0PRc6jvU2SWrEhobTocT1/img.png)
+
+위와 같이 배열을 생성하면 2차원 배열의 크기를 동일하게 만 설정할 수있다
+
+2차원 배열의 크기를 별도로 지정하고자 하면 아래와 같이 하면된다.
+
+```java
+int twoDim[][];
+twoDim = new int[2][]; // 1차원 배열의 크기를 지정한다.
+// 그 다음 반드시 2차원 배열의 크기를 지정해 줘야한다.
+twoDim[0] = new int[3];
+twoDim[1] = new int[2];
+```
+
+2차원 배열을 한번에 선언하고 초기화 할 수 있다.
+
+```java
+int [][] array = {{1,2,3},{1,2,3}};
+```
+
+배열의 길이를 아는 방법
+
+- length를 사용하여 값을 구할 수있다.
+- 2차원 배열의 경우 배열명.length를 사용하면 몇개의 1차원 배열이 있는지 알 수있고
+- 배열명[].length를 사용하면 해당 1차원 배열의 길이를 구할 수 있다.
+
+```java
+public class Arraylength
+{
     
-        String word = "Hello World";
-        
-        int[] array = {1,2,3,4,5};
-        
-        System.out.println(word.length());
-        
-        System.out.println(array.length);
+    public static void main(String[] args)
+    {
+        Arraylength array = new Arraylength();
+        array.printArray();
+        array.printArray2();
+    }
+
+    public void printArray2(){
+        int [] arr = {1,2,3,4,5};
+        System.out.println("array length = " + arr.length);
+    }
+
+    public void printArray(){
+        int [][]twoDim = {{1,2,3},{1,2,3}};
+        System.out.println("twoDim.length = " + twoDim.length);
+        System.out.println("twoDim[0].length = " + twoDim[0].length);
+    
     
     }
-    
+
 }
 
+```
+
+배열의 요소를 반복문으로 출력해보기
+
+```java
+
+public class Arraylength
+{
+    
+    public static void main(String[] args)
+    {
+        Arraylength array = new Arraylength();
+        array.printArray();
+        
+    }
+    public void printArray(){
+        int [][]twoDim = {{1,2,3},{1,2,3}};
+        System.out.println("twoDim.length = " + twoDim.length);
+        System.out.println("twoDim[0].length = " + twoDim[0].length);
+
+		/*	
+	  // 배열의 크기를 직접 하드코딩하는것은 좋지 않다.	 
+				for(int i = 0; i < 2; i++){
+            for(int j = 0; j < 3; j++){
+              System.out.println("twoDim["+i+"]["+j+"]=" 
+                + twoDim[i][j] );
+          }
+      */  }   
+
+		
+		// 아래와 같이 length를 활용하기 가변적으로 값을 받을 수 있다.
+        for(int i = 0; i < twoDim.length; i++){
+            for(int j = 0; j < twoDim[i[.length; j++){
+                System.out.println("twoDim["+i+"]["+j+"]=" 
+                + twoDim[i][j] );
+            }
+        }    
+
+    }
+
+   
+
+}
+// 결과
+ twoDim[0][0]=1
+twoDim[0][1]=2
+twoDim[0][2]=3
+twoDim[1][0]=1
+twoDim[1][1]=2
+twoDim[1][2]=3
+```
+
+### 배열을 위한  for문 (for-each)
+
+```java
+for(타입이름 임시변수명 :  반복대상 객체){
+
+}
+```
+
+- 반복대상 객체 (여기서는 배열)의 값이 0번째 위치부터 순서대로 임시변수에 for 문을 돌면서 들어간다.
+- 
+
+해당 for문을 사용해서 좀 더 깔끔한 코드를 작성할 수 있다.
+
+```java
+
+public class ArrayNewFor{
+    
+    public static void main(String[] args) {
+        ArrayNewFor arr = new ArrayNewFor();
+        arr.newFor();
+    }
+
+    public void newFor(){
+        int [] oneDim = {1,2,3,4,5};
+        for(int data : oneDim){
+            System.out.println(data);
+        }
+    }
+
+}
+// 결과
+1
+2
+3
+4
+5
+
+```
+
+2차원 배열을 변경한다면?
+
+```java
+// 기존 반복문
+    for(int i = 0; i < twoDim.length; i++){
+            for(int j = 0; j < twoDim[i[.length; j++){
+                System.out.println("twoDim["+i+"]["+j+"]=" 
+                + twoDim[i][j] );
+            }
+        }  
+        
+        
+ =============================================
+ 
+ for-each를 사용한 코드
+ 
+ for(int []arr1 : twoDim){
+		for(int data : arr1){
+			System.out.println(data);
+		}
+		
+	}      
 ```
