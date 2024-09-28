@@ -27,7 +27,7 @@ $ dokcer logs --tail  [컨테이너 ID 또는 컨테이너명]
 **[기존 로그 조회 + 생성되는 로그를 실시간으로 보고 싶은 경우]**
 
 ```bash
-# docker logs **-f** [컨테이너 ID 또는 컨테이너명]
+# docker logs -f [컨테이너 ID 또는 컨테이너명]
 
 # Nginx의 컨테이너에 실시간으로 쌓이는 로그 확인하기
 $ docker run -d -p 80:80 nginx
