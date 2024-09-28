@@ -20,8 +20,8 @@ $ docker logs [nginx가 실행되고 있는 컨테이너 ID]
 **[최근 로그 10줄만 조회]**
 
 ```bash
-# dokcer logs **--tail [로그 끝부터 표시할 줄 수]** [컨테이너 ID 또는 컨테이너명]
-$ dokcer logs **--tail 10** [컨테이너 ID 또는 컨테이너명]
+# dokcer logs --tail [로그 끝부터 표시할 줄 수] [컨테이너 ID 또는 컨테이너명]
+$ dokcer logs --tail  [컨테이너 ID 또는 컨테이너명]
 ```
 
 **[기존 로그 조회 + 생성되는 로그를 실시간으로 보고 싶은 경우]**
@@ -39,5 +39,5 @@ $ docker logs -f
 **[기존 로그는 조회하지 않기 + 생성되는 로그를 실시간으로 보고 싶은 경우]**
 
 ```
-$ docker logs **--tail 0 -f** [컨테이너 ID 또는 컨테이너명]
+$ docker logs --tail 0 -f [컨테이너 ID 또는 컨테이너명]
 ```
