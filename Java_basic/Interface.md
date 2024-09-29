@@ -27,6 +27,9 @@ public interface InterfaceAnimal {
 - 인터페이스의 메서드는 모두 public,abstract이다.
 - **인터페이스는 다중 구현을 지원한다.**
 
+![image](https://github.com/user-attachments/assets/4e2ec356-9643-479f-8603-1201e3671bd9)
+
+
 ### 코드 예시
 ```
 public interface InterFaceAnimal {
@@ -112,11 +115,13 @@ public class InterFaceMain {
 **인터페이스를 사용해야 되는 이유**
 
 - 제약
- - 반드시 메서드를 구현해야 되므로, 개발 시 일관되고 정형화된 개발을 위한 표준화가 가능합니다. 
+  - 반드시 메서드를 구현해야 되므로, 개발 시 일관되고 정형화된 개발을 위한 표준화가 가능합니다.
+  - 기능을 구현하는데 집중할 수 있습니다.
 
 - 다중구현
   - 자바는 다중 상속을 지원하지 않습니다 이 문제를 구현을 통해서 해결할 수 있습니다.
-  
+
+
 
 
 
