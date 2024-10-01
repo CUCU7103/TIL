@@ -29,5 +29,43 @@
  - 왜나하면 WebApi에서 Simple로 변경했을때 paymentServive에서 변경되는 부분이 없다.
 
 ### 전략패턴
-- 자신의 기능 맥락(context)에서 필요에 따라서 변경이 필요한 알고리즘을 인터페이스를 통해 통째로 외부로 분리시키고 이를 구현한 구체적인 알고리즘 클래스를
-  필요에 따아서 바꿔 사용할 수 있게하는 디자인 패턴입니다.
+
+- 자신의 기능 맥락(context)에서 필요에 따라서 변경이 필요한 알고리즘을 인터페이스를 통해 통째로 외부로 분리시키고
+  이를 구현한 구체적인 알고리즘 클래스를 필요에 따라서 바꿔 사용할 수 있게하는 디자인 패턴입니다.
+  
+- 알고리즘을 대표하는 인터페이스를 정의해 놓고 구현할 클래스를 만들고 그 클래스의 오브젝트를 사용할지를 자기가 결정하는 대신에 앞에서 이 컨텍스에 해당하는 paymentService를 호출해주는 클라이언트가 주입시켜주는 방식을 사용해야 한다.
+
+![image](https://github.com/user-attachments/assets/5dc62de4-8e02-4884-8fa2-ce7e2e8850e8)
+
+위 그림에서 exrateProvider가 전략 인터페이스가 되고 하위 클래스 두 개가 전략을 구현한 클래스들이 되는 것이다.
+
+```
+public class Sort {
+
+    public static void main(String[] args) {
+        // List scores = Arrays.asList(5,7,1,8,9,2);
+        List scores = Arrays.asList("z","b","spring","java");
+        // 두 번째 인수를 교체하면서 정렬방식을 바꾸는 전형적인 전략패턴이다.
+        Collections.sort(scores, (Comparator<String>) (o1, o2) -> o1.length() - o2.length());
+
+        scores.forEach(System.out::println);
+    }
+}
+```
+
+### 제어의 역전 loc
+- 제어권의 이전을 통한 제어관계역전
+- 내가 권한을 가지고 하던 어떤 작업이 다른쪽으로 넘어갔다고 생각하면 편하다.
+
+
+
+
+
+
+
+
+
+
+
+
+  
