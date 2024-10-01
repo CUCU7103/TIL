@@ -2,9 +2,11 @@
 - GC가 동작하는 방식은 Mark & sweep 방식으로 GC는 Unreachable한 객체를 제거하고 메모리를 회수합니다.
 - 이때 Mark & Sweep 방식은
   - Mark 과정에서 **GC root로 부터 객체에 접근**, 즉 참조의 여부로 객체 reachable, unreachable을 판단합니다.
-  - sweep 과정에서 Unreachable한 객체를 제거합니다. 
-- GC Root는 Mark 단계에서 객체의 참조여부를 결정할때 그 기준이 되는 영역이라고 말할 수 있습니다. 
-- 즉 GC의 ROOT는 Heap 메모리 영역을 참조하는 메서드 영역, 스태틱 변수, stack, native method stack이라고 말 할수 있습니다.
+  - sweep 과정에서 Unreachable한 객체를 제거합니다.
+  
+- GC root는 gc를 실행할때 Mark & sweep 방식 중 mark 단계에서 ROOT 부터 그래프 순회를 시작하고 이를 통해서 연결된 객체들을 찾아내어 마킹합니다.
+### 즉 GC ROOT는 heap영역의 객체를 참조하고 있는 영역이라고 볼 수있습니다.
+- jvm에서 heap영역의 객체를 참조하는건 stack 영역 method 영역, native method stack입니다.
 
 ![image](https://github.com/user-attachments/assets/aa7214d6-3299-4857-813c-be28883b2115)
 
@@ -14,6 +16,8 @@
 ![image](https://github.com/user-attachments/assets/69302c0a-2a30-4c30-bc09-97ad311b5ee4)
 
 모든 gc에서는 stop the world가 발생한다.
+stop the world : 
+gc가 실행되어지면 gc 실행중인 스레드를 제외하고 모든 스레드가 멈춥니다.
 
 1.Minor GC 
   - Heap 메모리의 young generation에서 발생하는 GC를 말합니다.
@@ -53,8 +57,8 @@
      - 이로 인해 stop the world로 발생되어지는 응답 지연시간을 최소화 할 수 있습니다.
 
 ## Stop the world가 느린 이유
-1. Heap 영역이 크기가 크면 GC가 Mark & Sweep 과정을 수행하는데 시간이 많이 걸리고 이로 인해서 stop the world 시간이 느려집니다.
+stop the world가 발생하면 gc 작업이 진행되는 스레드를 제외하고 모든 스레드가 멈춥니다. 즉 gc의 스레드 작업이 마무리 되어야지 어플리케이션이 다시 정상적으로 동작합니다.
+이때 Heap 영역이 크기가 크면 GC가 Mark & Sweep 과정을 수행하는데 시간이 많이 걸리고 이로 인해서 stop the world 시간이 느려집니다.
 
-3.  
     
 
