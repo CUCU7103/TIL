@@ -1,9 +1,9 @@
 ## GC ROOT란?
-- Mark & sweep 방식으로 GC는 Unreachable한 객체를 제거하고 메모리를 회수합니다.
+- GC가 동작하는 방식은 Mark & sweep 방식으로 GC는 Unreachable한 객체를 제거하고 메모리를 회수합니다.
 - 이때 Mark & Sweep 방식은
-  - Mark 과정에서 GC root로 부터 객체에 접근, 즉 참조의 여부로 객체 reachable, unreachable을 판단합니다.
+  - Mark 과정에서 **GC root로 부터 객체에 접근**, 즉 참조의 여부로 객체 reachable, unreachable을 판단합니다.
   - sweep 과정에서 Unreachable한 객체를 제거합니다. 
-- GC Root는 Java GC 내에서 삭제되지 않는 객체들의 시작점입니다 즉 Heap 영역의 인스턴스를 참조하는 객체라고 할 수 있습니다.
+- GC Root는 Mark 단계에서 객체의 참조여부를 결정할때 그 기준이 되는 영역이라고 말할 수 있습니다. 
 - 결과적으로 GC의 ROOT는 Heap 메모리 영역을 참조하는 메서드 영역, 스태틱 변수, stack, native method stack이라고 말 할수 있습니다.
 
 ![image](https://github.com/user-attachments/assets/aa7214d6-3299-4857-813c-be28883b2115)
