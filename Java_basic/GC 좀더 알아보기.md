@@ -15,18 +15,18 @@
 
 ![image](https://github.com/user-attachments/assets/69302c0a-2a30-4c30-bc09-97ad311b5ee4)
 
-모든 gc에서는 stop the world가 발생한다.
+모든 gc에서는 stop the world가 발생합니다.
 stop the world : 
 gc가 실행되어지면 gc 실행중인 스레드를 제외하고 모든 스레드가 멈춥니다.
 
-1.Minor GC 
+1.Minor GC
   - Heap 메모리의 young generation에서 발생하는 GC를 말합니다.
   - 메모리의 크기가 old generation 보다 상대적으로 작아 빠른 작업 속도를 가집니다.
   - stop the world 현상로 인한 문제가 거의 발생하지 않습니다.
   
 2.Majar GC 
   - Heap 메모리의 old generation이 가득 차면 동작합니다.
-  - Minor GC 진행중 객체의 age-bit가 임계값에 도달하면 old generation으로 넘깁니다. 
+  - Minor GC 진행중 객체의 age-bit가 임계값에 도달하면 old generation으로 넘깁니다.
   - Old Generation은 Young Generation에 비해 상대적으로 큰 공간을 가지고 있어, 이 공간에서 메모리 상의 객체 제거에 많은 시간이 걸리게 됩니다.
   - 이때 객체를 제거하는데 시간이 많이 걸리게 되어지고 stop the world 현상이 길게 유지되어집니다. 
 
