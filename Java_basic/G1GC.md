@@ -11,7 +11,7 @@
 
 ###  힙 메모리의 구성
   - Region : 힙을 동일한 크기의 작은 Region으로 나누어 관리합니다. 이렇게 하면 G1GC는 필요한 작업을 더 세밀하게 관리할 수 있고, 특정 영역에 대한 집중적인 작업이 가능해집니다.  
-  - Eden, Survivor, Old Region: 각 Region은 역할에 따라 세 가지 유형으로 나뉩니다:
+  - Eden, Survivor, Old Region: 각 Region은 역할에 따라 세 가지 유형으로 나뉩니다
     - Eden Region: 새로운 객체가 할당되는 공간으로, 새로 생성된 객체들이 먼저 여기에 저장됩니다.
     - Survivor Region: Eden에서 살아남은 객체들이 이동하는 공간으로, 여러 Young GC를 거친 뒤에도 여전히 참조되고 있는 객체들이 이곳으로 옮겨집니다.
     - Old Region: 오래된 객체가 할당되는 공간으로, 일정 수의 Young GC를 거친 뒤에도 살아남은 객체들이 여기로 이동합니다.
@@ -23,9 +23,9 @@
 - G1GC의 주요 동작 과정은 Minor GC, Concurrent Marking, 그리고 Mixed GC 단계로 나뉩니다
 
 - Minor GC
-Eden 영역의 수집: G1GC의 Young GC 단계는 Eden Region이 꽉 찼을 때 수행됩니다. Young GC는 Eden Region의 객체들을 가비지 컬렉션 대상으로 수집합니다.
-객체 이동: Young GC 동안 Eden에서 살아남은 객체는 Survivor Region으로 이동하게 되고, 참조되지 않는 객체는 가비지로 수집됩니다. 이로 인해 Eden 영역은 메모리가 확보됩니다.
-Stop-the-World 이벤트: Young GC는 짧은 Stop-the-World (STW) 이벤트로 진행됩니다. 이 단계는 주로 빠르게 끝나며, 지연 시간이 짧은 것이 특징입니다.
+- Eden 영역의 수집: G1GC의 Young GC 단계는 Eden Region이 꽉 찼을 때 수행됩니다. Young GC는 Eden Region의 객체들을 가비지 컬렉션 대상으로 수집합니다.
+- 객체 이동: Young GC 동안 Eden에서 살아남은 객체는 Survivor Region으로 이동하게 되고, 참조되지 않는 객체는 가비지로 수집됩니다. 이로 인해 Eden 영역은 메모리가 확보됩니다.
+- Stop-the-World 이벤트: Young GC는 짧은 Stop-the-World (STW) 이벤트로 진행됩니다. 이 단계는 주로 빠르게 끝나며, 지연 시간이 짧은 것이 특징입니다.
 
 - Concurrent Marking
 - G1GC의 핵심 작업 중 하나로, **힙의 상태를 분석하고 Old Region에서 어떤 객체가 여전히 사용되고 있는지 확인하는 과정**을 거칩니다.
