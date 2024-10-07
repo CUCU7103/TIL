@@ -1,4 +1,4 @@
-# [실습] Docker로 MySQL 실행시켜보기 - 2
+# [실습] Docker로 MySQL 실행시켜보기
 
 ### ✅ MySQL 컨테이너에 직접 접속해보기
 
