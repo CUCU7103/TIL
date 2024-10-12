@@ -23,9 +23,7 @@ GitHub Actions에서 워크플로우는 지정된 이벤트(`push`, `pull_reques
 
 ### 2. **`pull_request` 이벤트**
 
-- 트리거 조건
-
-  : 
+- 트리거 조건  : 
 
   ```
   develop
@@ -41,24 +39,18 @@ GitHub Actions에서 워크플로우는 지정된 이벤트(`push`, `pull_reques
 
 #### **시나리오 1: PR이 없는 경우**
 
-1. 푸시(Push)
-
-   :
+1. 푸시(Push) :
 
    - `feature` 브랜치에 커밋을 푸시하면 **`push` 이벤트**만 트리거됩니다.
    - **`pull_request` 이벤트**는 트리거되지 않습니다.
 
 #### **시나리오 2: PR이 이미 열려 있는 경우**
 
-1. PR 열기
-
-   :
+1. PR 열기:
 
    - `feature` 브랜치에서 `develop` 브랜치로 PR을 생성합니다.
 
-2. 푸시(Push)
-
-   :
+2. 푸시(Push):
 
    - ```
      feature
@@ -104,42 +96,30 @@ GitHub Actions에서 워크플로우는 지정된 이벤트(`push`, `pull_reques
 
 ### **상황 1: PR이 없는 상태에서 `feature` 브랜치에 푸시**
 
-1. 작업
-
-   :
+1. 작업:
 
    - `feature` 브랜치에 새로운 커밋을 푸시합니다.
 
-2. 트리거된 이벤트
-
-   :
+2. 트리거된 이벤트:
 
    - **`push` 이벤트**만 트리거됩니다.
 
-3. 실행되는 워크플로우
-
-   :
+3. 실행되는 워크플로우 :
 
    - `push`에 정의된 워크플로우가 실행됩니다.
 
 ### **상황 2: PR이 열려 있는 상태에서 `feature` 브랜치에 푸시**
 
-1. 작업
-
-   :
+1. 작업 :
 
    - `feature` 브랜치에 새로운 커밋을 푸시합니다.
 
-2. 트리거된 이벤트
-
-   :
+2. 트리거된 이벤트:
 
    - **`push` 이벤트**가 트리거됩니다.
    - **`pull_request` 이벤트**도 트리거됩니다.
 
-3. 실행되는 워크플로우
-
-   :
+3. 실행되는 워크플로우:
 
    - `push`에 정의된 워크플로우가 실행됩니다.
    - `pull_request`에 정의된 워크플로우가 실행됩니다.
@@ -159,7 +139,7 @@ GitHub Actions에서 워크플로우는 지정된 이벤트(`push`, `pull_reques
 **`push.yml`**
 
 ```
-yaml코드 복사name: Push Build
+name: Push Build
 
 on:
   push:
