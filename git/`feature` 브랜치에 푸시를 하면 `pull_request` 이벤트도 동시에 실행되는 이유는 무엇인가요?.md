@@ -73,15 +73,11 @@ GitHub Actions에서 워크플로우는 지정된 이벤트(`push`, `pull_reques
 
 ### **워크플로우 트리거 설정**
 
-- `push` 이벤트
-
-  :
+- `push` 이벤트:
 
   - 특정 브랜치(`feature`)에 푸시가 발생하면 워크플로우가 실행됩니다.
 
-- `pull_request` 이벤트
-
-  :
+- `pull_request` 이벤트:
 
   - 대상 브랜치(`develop`)로의 PR이 생성되거나 업데이트될 때 워크플로우가 실행됩니다.
 
