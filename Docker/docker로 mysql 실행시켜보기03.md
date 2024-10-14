@@ -21,7 +21,10 @@
     >
     >  `mysql_data` 디렉토리를 미리 만들어놓을 경우, 기존 컨테이너의 `/var/lib/mysql` 파일들을 전부 삭제한 뒤에 `mysql_data`로 덮어씌워 버린다.
 
-  - DB에 관련된 데이터가 저장되는 곳이 `/var/lib/mysql`인지는 Dockerhub MySQL의 공식 문서에 나와있다.
+ **- DB에 관련된 데이터가 저장되는 곳이 `/var/lib/mysql`인지는 Dockerhub MySQL의 공식 문서에 나와있다.**
+ <br>
+ /var/lib/mysql은 컨테이너 내부의 경로를 의미
+ 
 
     ![img](https://jscode.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fe35a8144-c5ff-40f0-b123-384a331e35bb%2F9bb1fc1b-7451-46d6-97ec-925da37b4894%2FUntitled.png?table=block&id=82488e4f-eac7-47d7-bf5f-5c4b19cd7ea1&spaceId=e35a8144-c5ff-40f0-b123-384a331e35bb&width=2000&userId=&cache=v2)
 
