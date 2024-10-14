@@ -4,15 +4,17 @@
 
 
 
-
-
 ## Dockerfile의 구조
 
 > [!NOTE]
 >
 > #### **하나의 Docker 이미지는 base 이미지부터 시작해서 기존 이미지위에 새로운 이미지를 중첩해서 여러 단계의 이미지 층(layer)을 쌓아가며 만들어집니다.**
+>
+> #### docker build [옵션] <경로>
+>
+> - <경로>는 도커파일이 위치한 디렉토리의 경로를 나타내고, 옵션은 이미지 빌드 과정을 조정하고 세부 사항을 지정하는 데 사용됩니다.
 
-#### 
+
 
 ### FROM
 
@@ -87,7 +89,137 @@ FROM openjdk:17-jdk
 **ENTRYPOINT ["/bin/bash", "-c", "sleep 500"]** # 500초 동안 시스템을 일시정지 시키는 명령어
 ```
 
-위 명령어를 추가함으로써 컨테이너가 바로 종료되는 걸 막을 수 있다. 그런 뒤에 `docker exec -it`를 활용해 컨테이너 내부에 직접 들어가서 디버깅을 하면 된다.
+위 명령어를 추가함으로써 컨테이너가 바로 종료되는 걸 막을 수 있다. 
+
+그런 뒤에 `docker exec -it`를 활용해 컨테이너 내부에 직접 들어가서 디버깅을 하면 된다.
+
+
+
+
+
+## Copy
+
+COPY는 호스트 컴퓨터에 있는 파일을 복사해서 컨테이너로 전달합니다.
+
+``` dockerfile
+# 문법
+COPY [호스트 컴퓨터에 있는 복사할 파일의 경로] [컨테이너에서 파일이 위치할 경로]
+
+# 예시
+COPY app.txt /app.txt
+```
+
+#### 파일 복사해보기
+
+``` dockerfile
+FROM ubuntu
+
+COPY app.txt /app.txt
+
+ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드	
+```
+
+실행과정
+
+``` dockerfile
+docker build [옵션] <경로>
+
+docker build -t my-server
+docker run -d my-server
+docker exec -it [Container ID] bash
+
+=====================================================
+bash-4.4# ls
+app.txt  boot  etc   lib    media  opt   root  sbin  sys  usr
+bin      dev   home  lib64  mnt    proc  run   srv   tmp  var
+bash-4.4# cat app.txt 
+Hello worldbash-4.4#
+```
+
+----
+
+#### 폴더 안에 있는 모든 파일들 복사하기
+
+- my-app 디렉터리 만들고, my-app 디렉터리 안에 파일 생성하기
+
+#### Dockerfile
+
+``` dockerfile
+FROM ubuntu
+
+COPY my-app /my-app/
+
+ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드
+```
+
+실행과정
+
+``` dockerfile
+$ docker build -t my-server .
+$ docker run -d my-server
+$ docker exec -it [Container ID] bash
+
+
+==================================================
+bash-4.4# ls
+bin   dev  home  lib64  mnt     opt   root  sbin  sys  usr
+boot  etc  lib   media  my-app  proc  run   srv   tmp  var
+bash-4.4# cd my-app
+bash-4.4# ls
+test.txt
+bash-4.4# cat test.txt 
+testbash-4.4#
+
+```
+
+----
+
+#### 와일드 카드 사용해보기
+
+- app.txt, readme.txt 파일 2개 만들기
+
+Dockerfile
+
+```dockerfile
+FROM ubuntu
+
+COPY *.txt /text-files/
+
+ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드
+```
+
+- 주의) /text-files라고 적으면 안 되고 /text-files/라고 적어야 text-files라는 디렉토리 안에 파일들이 정상적으로 복사된다. 
+
+----
+
+####  .dockerignore 사용해보기
+
+특정 파일 또는 폴더만 COPY를 하고 싶지 않을 수 있다. 그럴 때 .dockerignore를 활용한다. 
+
+![image](https://github.com/user-attachments/assets/310fd136-cc6b-4aa2-8d9c-6652df836567)
+
+
+Dockerfile
+
+``` dockerfile
+FROM ubuntu
+
+COPY ./ /
+
+ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드
+```
+
+
+
+``` 
+$ docker build -t my-server .
+$ docker run -d my-server
+$ docker exec -it [Container ID] bash
+
+$ ls
+```
+
+
 
 
 
