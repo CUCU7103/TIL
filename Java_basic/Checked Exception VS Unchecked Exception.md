@@ -104,18 +104,33 @@
 
 - **상위 레벨에서 예외 처리**: 
 
-  - Unchecked Exception은 **개별 메서드에서 처리하지 않고 상위 레벨의 예외 처리 핸들러에서 한꺼번에 처리할 수 있습니다.** 
-    - 예를 들어, Spring에서는 `@ControllerAdvice`를 사용해 모든 Unchecked Exception을 한 곳에서 처리할 수 있습니다.
+  - Unchecked Exception은 **개별 메서드에서 처리하지 않고 상위 레벨의 예외 처리 핸들러에서 처리할 수 있습니다.** 
+    - 예를 들어, Spring에서는 `@ControllerAdvice`를 사용하여  @ExceptionHandler로 지정된 특정한 Unchecked Exception 처리할 수 있습니다.
 
-  ```JAVA
-  @ControllerAdvice
-  public class GlobalExceptionHandler {
-      @ExceptionHandler(NullPointerException.class)
-      public ResponseEntity<String> handleNullPointerException(NullPointerException ex) {
-          return new ResponseEntity<>("Null pointer exception occurred.", HttpStatus.INTERNAL_SERVER_ERROR);
-      }
-  }
-  ```
+```
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    // 특정한 Unchecked Exception을 처리
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<String> handleNullPointerException(NullPointerException ex) {
+        return new ResponseEntity<>("Null pointer exception occurred.", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    // IllegalArgumentException 처리
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return new ResponseEntity<>("Illegal argument exception occurred.", HttpStatus.BAD_REQUEST);
+    }
+
+    // 모든 예외를 포괄적으로 처리하려면 Exception.class 사용
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleAllExceptions(Exception ex) {
+        return new ResponseEntity<>("An unexpected error occurred.", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+
+```
 
 - **의미 있는 예외 던지기**:
 
