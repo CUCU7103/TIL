@@ -220,6 +220,102 @@ $ ls
 ```
 
 
+## EntryPoint
+
+- 컨테이너가 생성되고 최초로 실행할때 수행되는 명령어를 말합니다.
+
+- docker run 명령을 통해 컨테이너를 실행할 때 **추가 인자로 덮어쓸 수 없습니다.**
+
+````dockerfile
+# 문법
+ENTRYPOINT [명령문...]
+
+# 예시
+ENTRYPOINT ["node", "dist/main.js"]
+
+````
+
+
+
+로그를 통해서 실행되어진 것을 확인할 수 있다.
+
+````dockerfile
+FROM ubuntu
+
+ENTRYPOINT ["/bin/bash", "-c", "echo hello"]
+
+$ docker build -t my-server .
+$ docker run -d my-server
+$ docker ps -a
+$ docker logs [Container ID]
+````
+
+![image](https://github.com/user-attachments/assets/7de4f031-a17e-4e7b-bd0d-b8ebe695e2f4)
+
+
+간단한 스프링 부트 프로젝트 띄워보기
+
+![image](https://github.com/user-attachments/assets/540ac56d-f8a0-4316-ad96-9e76bff51cf4)
+
+- 프로젝트 생성 후 Dockerfile 생성하기
+
+```
+FROM openjdk:17-jdk
+
+COPY build/libs/*SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+```
+
+- 프로젝트 빌드하기
+
+```
+./gradlew clean build
+```
+
+
+
+> [!NOTE]
+>
+> Dockerfile을 바탕으로 이미지 빌드하기
+>
+> $ docker build -t hello-server .
+>
+> 
+>
+> 이미지가 잘 생성됐는 지 확인하기
+>
+> $ docker image ls
+>
+> 
+>
+> 생성한 이미지를 컨테이너로 실행시켜보기
+>
+> $ docker run -d -p 8080:8080 hello-server
+>
+> 
+>
+> 컨테이너 잘 실행되고 있는 지 확인하기
+>
+> $ docker ps
+
+
+
+- docker log 명령을 사용해서 실행여부 확인하기
+
+![image](https://github.com/user-attachments/assets/ed30c718-ffdf-4f6a-9f4b-1acbe39548eb)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
