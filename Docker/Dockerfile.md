@@ -1,4 +1,4 @@
-# Dockerfile
+![image](https://github.com/user-attachments/assets/57d10017-8270-43a1-ac31-c22b541f9f61)# Dockerfile
 
 - 도커 이미지를 생성하기 위한 템플릿이다.
 
@@ -365,6 +365,90 @@ $ docker run -d my-server
 $ docker exec -it [Container ID] bash $ git -v # 컨테이너 내에 git이 잘 설치됐는 지 확인
 ```
 
+## WORKDIR : 작업 디렉토리를 지정
+
+#### WORKDIR으로 작업 디렉터리를 전환하면 **그 이후에 등장하는 모든 RUN, CMD, ENTRYPOINT, COPY, ADD 명**령문은 해당 디렉터리를 기준으로 실행된다.
+
+#### 작업 디렉터리를 굳이 지정해주는 이유는 **컨테이너 내부의 폴더를 깔끔하게 관리하기 위해서이다.** 
+
+컨테이너도 미니 컴퓨터와 같기 때문에 Dockerfile을 통해 생성되는 파일들을 특정 폴더에 정리해두는 것이 추후에 관리가 쉽다. 
+
+만약 WORKDIR을 쓰지 않으면 컨테이너 내부에 존재하는 기존 파일들과 뒤섞여버린다. 
+
+#### ![✅](data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==) 사용법
+
+```dockerfile
+# 문법 
+WORKDIR [작업 디렉토리로 사용할 절대 경로] 
+# 예시 
+WORKDIR /usr/src/app
+```
+
+
+
+```dockerfile
+# 문법
+WORKDIR [작업 디렉토리로 사용할 절대 경로] 
+# 예시 
+WORKDIR /usr/src/app
+```
+
+
+
+
+
+
+
+#### ![🎯](data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==) 예제
+
+app.txt, src, config.json 파일 만들기
+
+Dockerfile 만들어서 이미지 생성 및 컨테이너 실행
+
+> WORKDIR을 안 썼을 때 파일이 어떻게 구성되는 지 먼저 확인해보자.
+
+Dockerfile
+
+```dockerfile
+FROM ubuntu 
+COPY ./ ./ 
+ENTRYPOINT ["/bin/bash", "-c", "sleep 500"] # 디버깅용 코드
+```
+
+```
+$ docker build -t my-server . 
+$ docker run -d my-server 
+$ docker exec -it [Container ID] bash $ ls
+```
+
+
+
+> WORKDIR을 썼을 때 파일이 어떻게 구성되는 지 확인해보자. 
+
+```Dockerfile
+FROM ubuntu
+WORKDIR /my-dir COPY ./ ./ 
+ENTRYPOINT ["/bin/bash", "-c", "sleep 500"]
+```
+
+```
+$ docker build -t my-server . 
+$ docker run -d my-server 
+$ docker exec -it [Container ID] bash $ ls
+```
+
+WORKDIR을 사용 안 할시
+
+![image](https://github.com/user-attachments/assets/6b58d0f0-ae33-42bf-a16b-6d93f667e260)
+
+
+
+WORKDIR을 사용 할 시
+
+![image](https://github.com/user-attachments/assets/1ea49d45-05f4-41b7-8521-862b09c0971d)
+
+
+WORKDIR을 사용하면 초기경로부터 잡아주고 해당 경로안에 파일이 생성된 것을 확인할 수 있다.
 
 
 
