@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/57d10017-8270-43a1-ac31-c22b541f9f61)# Dockerfile
+# Dockerfile
 
 - 도커 이미지를 생성하기 위한 템플릿이다.
 
