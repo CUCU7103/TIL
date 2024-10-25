@@ -24,7 +24,11 @@ java 7 부터는 NIO2가 등장하면서 files라는 클래스가 등장했습�
 
 ## File
 
-**File** 클래스를 통하여 파일시스템의 파일이나 디렉터리를 조작(삭제, 파일명변경 등)을 할 수 있다.
+**File** 클래스를 통하여 파일시스템의 파일이나 디렉터리를 조작(삭제, 파일명변경 등)을 할 수 있습니다.
+
+**File 객체를 생성했다고 해서 파일이나 디렉토리가 생성되는 것은 아닙니다..**
+
+**그리고 경로에 실제 파일이나 디렉토리가 없더라도 예외가 발생하지 않는다.**
 
 **File 클래스로부터 File 객체를 생성하는 방법은 아래와 같다.**
 
@@ -45,9 +49,7 @@ File temp = new File("C:/Temp/file.txt");
 File temp = new File("C:\\Temp\\file.txt");
 ```
 
-**File 객체를 생성했다고 해서 파일이나 디렉토리가 생성되는 것은 아니다.**
 
-**그리고 경로에 실제 파일이나 디렉토리가 없더라도 예외가 발생하지 않는다.**
 
 **파일이나 디렉토리가 실제 있는지 확인하고 싶다면 File 객체를 생성하고 나서 exists() 메소드를 호출해 보면 된다.**
 
@@ -55,7 +57,7 @@ File temp = new File("C:\\Temp\\file.txt");
 boolean isExist = file.exists(); //파일이나 폴더가 존재한다면 true를 리턴
 ```
 
-예시
+- 예시
 
 ```java
 public class FileSample {
@@ -78,7 +80,7 @@ public class FileSample {
 
 ```
 
-실제 디렉터리를 생성하려면 mkdir()을 사용하면 된다.
+- 실제 디렉터리를 생성하려면 mkdir()을 사용하면 됩니다.
 
 ![[Java] File과 Files 클래스 - File 클래스](https://blog.kakaocdn.net/dn/c5fw8R/btsplbxudWB/H8HWPrHjULWpkRKWtLqKB0/img.png)
 
@@ -89,9 +91,7 @@ public class FileSample {
     }
 ```
 
-
-
-**exists() 메소드의 리턴값이 true라면 아래 메소드를 사용할 수 있다.**
+**exists() 메소드의 리턴값이 true라면 아래 메소드를 사용할 수 있습니다.**
 
 ![[Java] File과 Files 클래스 - File 클래스](https://blog.kakaocdn.net/dn/pZkeS/btspE5hA8Q0/lNtNddNBj75TUEL85cy5K1/img.png)
 
@@ -101,7 +101,7 @@ public class FileSample {
 
 - `createNewFile()` : 새로운 파일을 생성
 - `mkdir()` : 새로운 디렉토리를 생성
-- `mkdirs()` : 상위 디렉토리가 없으면 같이 생성
+- `mkdirs()` : 경로상에 없는 모든 디렉토리를 생성
 
 ```java
 public class FileExample {
@@ -133,14 +133,6 @@ public class FileExample {
 			System.out.println();
 		}
 	}
-```
-
-
-
-```java
-최근 수정한 날짜 얻기
-new Date(file.lastModified())
-위 코드에서 file.lastModified()는 long 타입 값을 리턴하는데, Date()는 이를 날짜로 만든다.
 ```
 
 
