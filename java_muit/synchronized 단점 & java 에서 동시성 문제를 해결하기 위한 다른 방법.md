@@ -90,6 +90,7 @@ atomicRef.set("새값"); // 값 변경
 
 **AtomicIntegerArray**, **AtomicLongArray**, **AtomicReferenceArray<E>**: 배열 형태의 값을 원자적으로 업데이트할 수 있는 클래스들입니다.
 
+
 **Atomic 클래스의 동작 원리**
 
  Atomic 클래스들은 주로 **Compare and Swap(CAS)** 알고리즘을 내부적으로 사용하여 원자적 연산을 구현합니다. 
