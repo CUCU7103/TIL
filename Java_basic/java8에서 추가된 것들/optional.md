@@ -1,10 +1,6 @@
 # Optional
 
-
-
-#### Optional<T> 클래스는 Integer나 Double 클래스 처럼 'T' 타입의 객체를 포장해주는 래퍼 클래스 입니다
-
-- 따라서 Optional 인스턴스는 모든 타입의 참조 변수를 저장할 수있습니다.
+### Optional은 프로그래밍에서 값이 존재할 수도 있고 존재하지 않을 수도 있는 변수를 표현하는 데 사용되는 개념입니다.
 
 #### Optional 객체를 사용하면 예상치 못한 NullPointerException 예외를 제공되는 메소드로 간단히 회피할 수 있습니다.
 
