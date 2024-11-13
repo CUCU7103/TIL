@@ -1,7 +1,6 @@
 # HTTPS 동작방식
 
 > [!NOTE]
->
 > - HTTP는 Hyper-Text Transfer Protocol의 약자로, Hypertext인 HTML을 주고받기 위한 규약(protocol)입니다.
 > - 웹 사이트를 구성하는 HTML 파일을 전송하기 위해 HTTP를 이용합니다. 
 > - 하지만 HTTP는 전송중인 데이터를 가로채면 누구나 데이터를 읽을 수 있다는 보안상의 문제점이 존재합니다.
