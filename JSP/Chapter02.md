@@ -98,14 +98,18 @@
 
 
 
-HTTP
+### HTTP
 
 - 웹 사이트를 구성하는 html 파일을 전송하기 위해 사용되어지는 프로토콜입니다.
 - HTTP 전송은 HTTP request와 HTTP response로 이루어집니다.
 
+![image](https://github.com/user-attachments/assets/4783e2b1-5005-49c7-b427-2f4b626a6971)
 
 
-Request Message의 구조
+![image](https://github.com/user-attachments/assets/c7d676bd-f862-4d01-bf89-2807719d78c3)
+
+
+### Request Message의 구조
 
 - **Start Line**
 
@@ -142,10 +146,19 @@ Response Message의 구조
     - 응답의 몸체가 어떤 데이터인지, 길이는 어떻게 되는지
 - **Body**
   - 전송하는 데이터를 담고 있는 부분입니다.
+ 
+
+### HTTP 통신
+
+HTTP 통신은 클라이언트(Front-End)와 서버(Back-End)로 나뉘어진 구조로 되어있다.
+
+클라이언트가 요청(Request)하면 서버가 응답(Response) 하는 것이다.
+
+예를들어 클라이언트가 HTTP 메세지를 만들어 보내고 , 서버에서 요청에 대한 응답이 올 때까지 기다린다. 그리고 서버는 요청에 대한 결과를 만들어서 응답한다.
 
 
 
-정적자원과 동적자원
+### 정적자원과 동적자원
 
 - **정적자원 (= 정적 페이지)** 
 
@@ -166,6 +179,8 @@ Response Message의 구조
 - 동적 페이지를 생성하는데 필요한 자바의 표준 기술로써 html 응답을 생성하는데 필요한 기능을 제공합니다.
   - xml, json , 바이너리 파일들도 응답으로 생성할 수 있지만 주로 html 응답을 생성
 - jsp 통해 만든 프로그램을 실행하려면 WAS가 필요합니다.
+- JavaServer Pages의 약자를 뜻하며, HTML 코드에 JAVA 코드를 사용하여 동적 웹페이지(Dynamic Web Page)를 생성하는 웹 어플리케이션 도구(라이브러리)이다.
+- JSP가 실행되면 자바 "Servlet"으로 변환이 되며, 웹 어플리케이션 서버에서 동작되게 되며, 생성된 데이터들을 웹페이지와 클라이언트를 통해 응답을 한다.
 
 > [!NOTE]
 >
