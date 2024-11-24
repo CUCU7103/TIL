@@ -1,5 +1,8 @@
 ## **TCP/IP 4계층 모델과 HTTP의 역할**
 
+![image](https://github.com/user-attachments/assets/60c283d1-d219-4283-b99c-554c1bca8361)
+
+
 #### **1. 애플리케이션 계층**
 
 - **역할**: 
