@@ -76,9 +76,9 @@
 
 - PUT 요청에 해당하는 리소스가 있는 경우
 
-  ![image-20241121004327177](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004327177.png?token=AZT7RR6MGBY5OZB6P26XMYDHHYB52)
+  ![image-20241121004327177](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004327177.png)
 
-  ![image-20241121004344042](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004344042.png?token=AZT7RR5UEP6USGOOMD4PVF3HHYB62)
+  ![image-20241121004344042](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004344042.png)
 
   - 기존에 있는 데이터를 완전히 대체한다.
 
@@ -86,16 +86,16 @@
 
 - PUT 요청에 해당하는 리소스가 없는 경우
 
-  ![image-20241121004411232](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004411232.png?token=AZT7RR4T45B6GNL27Q7QVJTHHYCAQ)
+  ![image-20241121004411232](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004411232.png)
 
-  ![image-20241121004423915](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004423915.png?token=AZT7RR44MSM4USZWRPZYTBDHHYCBK)
+  ![image-20241121004423915](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004423915.png)
 
   - 기존의 데이터가 없다면 POST와 같이 신규로 생성한다.
 
 - PUT 요청에 일부 리소스만 변경하길 원하는 경우?
 
-  - ![image-20241121004536660](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004536660.png?token=AZT7RR4M77RXAWDZIH2SFNLHHYCF4)
-  - ![image-20241121004548071](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004548071.png?token=AZT7RR3KAAK6J2QKVEENC7LHHYCGS)
+  - ![image-20241121004536660](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004536660.png)
+  - ![image-20241121004548071](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004548071.png)
   - 기존 데이터가 완전히 대체되어집니다. 즉 위의 예시에서는 useraname 데이터가 삭제되어 집니다.
 
 ## **PATCH **
@@ -106,9 +106,9 @@
 
 - Petch 요청에서 일부 리소스만 변경하려고 할때
 
-  ![image-20241121004720850](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004720850.png?token=AZT7RRYMASFJF2GVIRRXW43HHYCMM)
+  ![image-20241121004720850](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004720850.png)
 
-![image-20241121004729595](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004729595.png?token=AZT7RR7QP42MMOYUTY56FG3HHYCM6)
+![image-20241121004729595](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004729595.png)
 
 - PUT과는 다르게 기존 리소스는 유지하면서 변경 요청한 부분만 수정되어진다.
 
@@ -123,7 +123,7 @@
 - 응답의 상태 코드만 확인할때와 같이 Resource를 받지 않고 오직 찾기만 원할때 사용 (일종의 검사 용도)
 - 서버의 응답 헤더를 봄으로써 Resource가 수정 되었는지 확인 가능
 
-![image-20241121004933435](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121004933435.png?token=AZT7RRZRF4DKFF6KKUKSZT3HHYCUW)
+![image-20241121004933435](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004933435.png)
 
 
 
@@ -134,7 +134,7 @@
 - 요청의 최종 수신자는 반드시 송신자에게 200(OK) 응답의 내용(Body)로 수신한 메세지를 반송해야 한다.
 - 최초 Client의 요청에는 Body가 포함될 수 없다.
 
-![image-20241121005054232](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121005054232.png?token=AZT7RR73YWKX244HIRUHCYDHHYCZY)
+![image-20241121005054232](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121005054232.png)
 
 
 
@@ -143,11 +143,11 @@
 - 예비 요청(Preflight)에 사용되는 HTTP 메소드
 - 예비 요청이란?
   - 본 요청을 하기 전에 해당 경로가 안전한지 미리 검사하는 것입니다.
-- 서버의 지원 가능한 HTTP 메서드와 출처를 응답 받아 [CORS 정책Visit Website](https://inpa.tistory.com/entry/WEB-📚-CORS-💯-정리-해결-방법-👏)을 검사하기 위한 요청이다.
+- 서버의 지원 가능한 HTTP 메서드와 출처를 응답 받아 [CORS 정책Visit Website]을 검사하기 위한 요청이다.
 
 
 
-![image-20241121005229537](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121005229537.png?token=AZT7RRYQDHGMKV74TEIIDO3HHYC7W)
+![image-20241121005229537](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121005229537.png)
 
 
 
@@ -163,7 +163,7 @@
 >
 > - 서버가 특정 시점에 보유하고 있는 데이터나, 리소스의 현재 상태를 의미합니다.
 
-![image-20241121010839433](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241121010839433.png?token=AZT7RR7AQ2FHGCG4MVBM33DHHYE4I)
+![image-20241121010839433](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121010839433.png)
 
 
 
