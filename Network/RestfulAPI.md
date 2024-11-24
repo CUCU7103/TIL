@@ -85,9 +85,7 @@ REST는 다음과 같은 3가지로 구성이 되어있습니다.
 
      ```
      bash
-     
-     
-     코드 복사
+    
      GET /users/123
      ```
 
@@ -98,7 +96,7 @@ REST는 다음과 같은 3가지로 구성이 되어있습니다.
    - **사용자 정보 업데이트 (PUT 요청)**
 
      ```
-     bash코드 복사PUT /users/123
+     PUT /users/123
      Content-Type: application/json
      
      {
@@ -114,7 +112,7 @@ REST는 다음과 같은 3가지로 구성이 되어있습니다.
    - **사용자 생성 (POST 요청)**
 
      ```
-     bash코드 복사POST /users
+     POST /users
      Content-Type: application/json
      
      {
@@ -155,7 +153,7 @@ REST는 다음과 같은 3가지로 구성이 되어있습니다.
    - **사용자 인증 (각 요청에 토큰 포함)**
 
      ```
-     sql코드 복사GET /users/123
+     GET /users/123
      Authorization: Bearer <access_token>
      ```
 
