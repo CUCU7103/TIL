@@ -23,7 +23,7 @@
 
 - 웹 브라우저에서 jsp 페이지에 해당하는 URL을 입력하면 아래 그림과 같은 처리과정을 거칩니다.
 
-![image-20241119010157089](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241119010157089.png?token=AZT7RR2JFS76VJQ2VTPS5ZTHHNSTE)
+![image-20241119010157089](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241119010157089.png)
 
 - WAS는 JSP 페이지에 대한 요청이 들어오면 
 
@@ -93,7 +93,7 @@ JSP 페이지를 요청할때는 JSP를 직접 실행하는 것이 아니라 JSP
 
 버퍼를 사용하여 데이터를 전송하는 방식은 아래 그림과 같다.
 
-![image-20241119013823706](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241119013823706.png?token=AZT7RR6RE6ROFK53ZKYK76DHHNW32)
+![image-20241119013823706](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241119013823706.png)
 
 - 플러쉬(flush)
   - 버퍼가 다 찼을 때, 버퍼에 쌓인 데이터를 실제로 전송되어야 할 곳(또는 저장되어야 할 곳)에 전송하고(또는 저장하고) 버퍼를 비우는 것을 플러시라고 한다
@@ -104,7 +104,7 @@ JSP 페이지를 요청할때는 JSP를 직접 실행하는 것이 아니라 JSP
 
 - 서블릿/JSP로 구성된 기본 폴더 구조는 다음과 같습니다.
 
-![image-20241119014245047](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241119014245047.png?token=AZT7RRZ7DXWDME3Z53NNZYTHHNXME)
+![image-20241119014245047](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241119014245047.png)
 
 - WEB-INF : 웹 어플리케이션 설정 정보를 담고 있는 web.xml 파일이 위치한다.
 - WEB-INF\classes : 웹 어플리케이션에서 사용하는 클래스 파일이 위치한다.
