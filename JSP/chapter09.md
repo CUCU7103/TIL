@@ -82,12 +82,11 @@
 - **HttpOnly 여부 (HttpOnly)**
 
 ---
-
 ## **HTTP Cookie  헤더**
 
 ### 서버와 브라우저는 기본적으로 HTTP 메시지 안에 이 쿠키를 담아서 주고 받게 됩니다
 
-![image](https://github.com/user-attachments/assets/7386f3c8-2d1e-4b18-8537-d8e6bb011633)
+![image](https://github.com/user-attachments/assets/f890182e-d213-400e-9738-78ceb4d79b12)
 
 
 ### **Cookie (요청 헤더,Request Header)**
@@ -99,7 +98,12 @@
 - `Cookie` 요청 헤더에는 아래와 같은 형식에 따라 여러 개의 쿠키를 `;`로 구분하여 나열할 수 있습니다.
 
 - ```bash
-  Cookie: <이름>=<값>; <이름>=<값>; <이름>=<값>
+  Cookie: name=value
+  Cookie: name=value; name2=value2; name3=value3
+  
+  example
+  Cookie: PHPSESSID=298zf09hf012fh2; csrftoken=u32t4o3tb3gg43; _gat=1
+  
   ```
 
 ---
@@ -115,14 +119,33 @@
   - 여러개의 value를 콤마(,)로 열거하여 저장해 구분합니다.
 
 - ```bash
-  Set-Cookie: <key>=<value>
-  Set-Cookie: <key>=<value>
-  Set-Cookie: <key>=<value>
+  Set-Cookie: <cookie-name>=<cookie-value>
+  Set-Cookie: <cookie-name>=<cookie-value>; Domain=<domain-value>
+  Set-Cookie: <cookie-name>=<cookie-value>; Expires=<date>
+  Set-Cookie: <cookie-name>=<cookie-value>; HttpOnly
+  Set-Cookie: <cookie-name>=<cookie-value>; Max-Age=<number>
+  Set-Cookie: <cookie-name>=<cookie-value>; Partitioned
+  Set-Cookie: <cookie-name>=<cookie-value>; Path=<path-value>
+  Set-Cookie: <cookie-name>=<cookie-value>; Secure
+  
+  Set-Cookie: <cookie-name>=<cookie-value>; SameSite=Strict
+  Set-Cookie: <cookie-name>=<cookie-value>; SameSite=Lax
+  Set-Cookie: <cookie-name>=<cookie-value>; SameSite=None; Secure
+  
+  // Multiple attributes are also possible, for example:
+  Set-Cookie: <cookie-name>=<cookie-value>; Domain=<domain-value>; Secure; 
   ```
 
 - 클라이언트는 이 정보를 바탕으로 쿠키를 만들어 브라우저에 저장합니다.
 
-![image](https://github.com/user-attachments/assets/df2815c8-2f3a-468c-bb5f-68901b0eabfb)
+![image](https://github.com/user-attachments/assets/98c5c960-a09f-432e-88bc-8e24cf3de8c0)
+
+
+set-cookie 속성들
+
+- 아래 링크에서 자세하게 확인이 가능합니다.
+
+- ## [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#attributes)
 
 
 ---
