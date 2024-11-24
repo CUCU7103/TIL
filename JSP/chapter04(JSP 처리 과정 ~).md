@@ -25,6 +25,9 @@
 
 ![image-20241119010157089](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241119010157089.png)
 
+![image](https://github.com/user-attachments/assets/6e58045e-4ae5-416e-a9c9-5eef59467616)
+
+
 - WAS는 JSP 페이지에 대한 요청이 들어오면 
 
   **1. JSP와 관련된 서블릿 클래스가 없는 경우** (1.1)
@@ -60,6 +63,16 @@ JSP 페이지를 요청할때는 JSP를 직접 실행하는 것이 아니라 JSP
 - JSP을 자바코드로 변환하는 단계를 변환(ranslation)단계이라고 하고 
 
 - 자바코드를 서블릿 클래스로 변경하는 것을 컴파일(complie)단계라고 합니다.
+
+
+### JSP 구동방식 정리하기
+ - JSP의 구동 방식은 다소 복잡해 보이지만, 알고 보면 JSP 파일을 서블릿으로 변환하여 서블릿을 실행하는 방식입니다. 
+ - 한 번 서블릿으로 컴파일된 JSP 파일은 캐시되므로 실질적인 성능 저하 없이 개발 생산성과 유지보수 편의성을 모두 얻을 수있습니다.
+
+
+### 서블릿과 JSP의 주요 차이
+
+![image](https://github.com/user-attachments/assets/6c2cd551-9cc7-4491-883a-9712dbc7e1de)
 
 
 
@@ -151,3 +164,9 @@ webapps\chap04 -> http://localhost:8080/chap04
 
 - 대상 폴더에 직접 복사
 - war 파일로 배포
+
+
+오늘날의 일반적인 웹 구동방식
+
+![image](https://github.com/user-attachments/assets/3e808727-97d3-4d41-a3c7-59b3be8dd639)
+
