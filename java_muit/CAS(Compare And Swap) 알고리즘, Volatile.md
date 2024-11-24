@@ -83,7 +83,8 @@ Sychcronzied는 blocking 을 사용하여 멀티 스레드 환경에서 공유�
 - 동시성 처리를 위한 다양한 방법들 (volatile, sychronized, CAS) 중 하나로써 "비교하고 바꿔주는" 알고리즘입니다.
 - 컴퓨터 과학(CS) 에서 비동기적 동시성 제어 기법 중 하나로, 여러 스레드가 동시에 데이터를 수정하려고 할 때 데이터의 일관성을 보장하는 방법입니다.
 
-![image-20241119000521740](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241119000521740.png?token=AZT7RR6TZ2SLMUA4EPDJX5LHHNL66)
+![image](https://github.com/user-attachments/assets/0a84313e-a297-4ffa-9a34-493d0b3cf9ad)
+
 
 ## 원자성과 atomic type
 
@@ -105,7 +106,8 @@ Sychcronzied는 blocking 을 사용하여 멀티 스레드 환경에서 공유�
 
 - #### JVM 기준으로  CAS는 다음과 같은 메모리를 사용합니다.
 
-  ![image-20241119000626551](https://raw.githubusercontent.com/CUCU7103/typora_images/main/image/image-20241119000626551.png?token=AZT7RR4W76LG6DI3UD577V3HHNMC6)
+![image](https://github.com/user-attachments/assets/6133a042-f3ab-459c-ae96-b6259bb0c4ec)
+
 
 - #### **Heap 메모리**
 
@@ -126,7 +128,6 @@ Sychcronzied는 blocking 을 사용하여 멀티 스레드 환경에서 공유�
 - CAS 알고리즘은 **JVM의 Heap 메모리**에 저장된 공유 데이터를 사용합니다.
 - 스레드마다 **Working Memory(스레드 캐시)**를 통해 데이터를 읽어오며, 비교 시 주 메모리와 동기화 과정을 거칩니다.
 - CAS는 **`heap`의 값(Destination)과 스레드의 캐시 값(Compared Value)을 비교하여, 일치하면 변경하고, 다르면 변경하지 않는 방식으로 동작**합니다.
-
 
 
 
