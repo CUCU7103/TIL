@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/cb580f7a-1957-491a-9d49-6280cd6214e3)# RESTful API
+# RESTful API
 
 - REST([Representational State Transfer](https://www.ibm.com/kr-ko/topics/api)) 아키텍처 스타일의 설계 원칙을 준수하는 *API(**애플리케이션프로그래밍 인터페이스)*입니다.
 
