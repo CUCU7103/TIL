@@ -329,7 +329,6 @@ class UserRepositoryTest {
    - `@ExtendWith(MockitoExtension.class)`: Mock을 사용한 서비스 테스트
    - `@DataJpaTest`: JPA 리포지토리 테스트
 
-이 예시를 기반으로 각 레이어에 적합한 단위 테스트를 작성하면 됩니다.
 
 
 
