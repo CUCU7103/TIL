@@ -314,7 +314,7 @@ class UserRepositoryTest {
 
 ```
 
-### 핵심 포인트:
+### 주요 사항
 
 1. **Mock 사용 여부**:
    - **서비스 레이어**: 
@@ -323,6 +323,7 @@ class UserRepositoryTest {
      - `@MockBean`으로 의존성을 목킹.
    - **리포지토리 레이어**: 
      - `@DataJpaTest`를 사용하여 실제 데이터베이스와 연결된 환경에서 테스트.
+       
 2. **테스트 어노테이션**:
    - `@WebMvcTest`: 컨트롤러 레이어 테스트
    - `@ExtendWith(MockitoExtension.class)`: Mock을 사용한 서비스 테스트
