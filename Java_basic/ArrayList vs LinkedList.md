@@ -20,13 +20,17 @@
 >
 > - **O(n^2)**: 입력 크기 n에 대해 실행 시간이 제곱에 비례해 증가하는 경우(이차 시간).
 >
->   [![1](https://github.com/user-attachments/assets/0a21387f-8767-4310-b3a3-6acaeed34e20)](https://github.com/user-attachments/assets/0a21387f-8767-4310-b3a3-6acaeed34e20)
+>   ![image](https://github.com/user-attachments/assets/6db36190-9a50-4461-b58d-80b932a7e37f)
+>
+>   ![image](https://github.com/user-attachments/assets/d7295693-e504-4c56-a015-c9751cfc4406)
+> 
+
 
 
 
 ### ArrayList
 
-ArrayList는 배열기반의 리스트 구현체 입니다.
+ArrayList는 배열 기반의 리스트 구현체 입니다.
 
 - 내부적으로 동적배열을 사용해서 데이터를 저장합니다.
 - 인덱스를 사용하여 요소에 접근하기 때문에 검색속도가 빠릅니다.
@@ -97,10 +101,8 @@ ArrayList는 배열기반의 리스트 구현체 입니다.
 
 ### 사용시점
 
-- ArrayList
-  - 자주 조회하고 인덱스를 통한 접근에 유리합니다.
-- linkedList 
-  - 중간에 자주 삭제나 추가 작업이 이루어지는 경우에 유리합니다.
+- ArrayList는  조회 시 시간복잡도가 O(1)으로 매우 빠르기에 조회위주의 작업이 많다면 ArrayList를 사용하는것이 유리합니다.
+- 반면에 삽입, 삭제가 빈번하게 일어나는 경우라면 LinkedList의 삽입, 삭제의 시간 복잡도는 O(1)이기에 LinkedList를 사용하는 것이 유리합니다.
 
 
 
