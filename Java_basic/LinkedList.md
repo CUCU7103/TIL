@@ -121,7 +121,7 @@ Ex = H
 
 ## LinkedList 스택 & 큐 지원
 
- `Deque` 를 구현하므로써 stack과 queue 로서도 이용이 가능하다. 그래서 아래와 같이 스택과 큐에 관한 전용 메서드를 별도로 제공한다
+ `Deque` 를 구현하므로써 stack과 queue 로서도 이용이 가능합니다. 그래서 아래와 같이 스택과 큐에 관한 전용 메서드를 별도로 제공합니다.
  
 ![image](https://github.com/user-attachments/assets/bd30ea51-fcb1-4202-b9b9-3ebe5bb98f86)
 
