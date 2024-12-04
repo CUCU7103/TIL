@@ -1,13 +1,11 @@
 # ArrayList
 
-
-
 ### List에는 ArrayList, LinkedList가 있습니다.
 
 ![image](https://github.com/user-attachments/assets/43c0133b-5135-431f-b969-14f358fee3de)
 
 
-#### Collection 인터페이스 
+## Collection 인터페이스 
 
 > [!NOTE]
 >
@@ -17,7 +15,7 @@
 
 
 
-#### List 인터페이스
+## List 인터페이스
 
 > [!NOTE]
 >
@@ -27,53 +25,35 @@
 
 
 
-#### List의 주요한 메서드
+## List의 주요한 메서드
 
-> [!IMPORTANT]
->
-> - #### **add(E e) 리스트의 끝에 지정된 요소를 추가한다.**
->
-> - #### **add(int index, E element) 리스트의 지정된 위치에 요소를 삽입한다.**
->
-> - #### **addAll(Collection<? extends E> c) 지정된 컬렉션의 모든 요소를 리스트의 끝에 추가한다.**
->
-> - #### **addAll(int index, Collection<? extends E> c) 지정된 컬렉션의 모든 요소를 리스트의 지정된 위치에 추가한다.**
->
-> - #### **get(int index) 리스트에서 지정된 위치의 요소를 반환한다.**
->
-> - #### **set(int index, E element) 지정한 위치의 요소를 변경하고, 이전 요소를 반환한다.**
->
-> - #### **remove(int index) 리스트에서 지정된 위치의 요소를 제거하고 그 요소를 반**
->
->   **환한다.**
->
-> - #### **remove(Object o) 리스트에서 지정된 첫 번째 요소를 제거한다.**
->
-> - #### **clear() 리스트에서 모든 요소를 제거한다.**
->
-> - #### **indexOf(Object o) 리스트에서 지정된 요소의 첫 번째 인덱스를 반환한다.**
->
-> - #### **lastIndexOf(Object o) 리스트에서 지정된 요소의 마지막 인덱스를 반환한다.**
->
-> - #### **contains(Object o) 리스트가 지정된 요소를 포함하고 있는지 여부를 반환한다**
->
-> - #### **sort(Comparator<? super E> c) 리스트의 요소를 지정된 비교자에 따라 정렬한다.**
->
-> - #### **subList(int fromIndex, int toIndex) 리스트의 일부분의 뷰를 반환한다.**
->
-> - #### **size() 리스트의 요소 수를 반환한다.**
->
-> - #### **isEmpty() 리스트가 비어있는지 여부를 반환한다.**
->
-> - #### **iterator() 리스트의 요소에 대한 반복자를 반환한다.**
->
-> - #### **toArray() 리스트의 모든 요소를 배열로 반환한다.**
->
-> - #### **toArray(T[] a) 리스트의 모든 요소를 지정된 배열로 반환한다**
->
-> 
+| 메소드                                       | 설명                                                        |
+| -------------------------------------------- | ----------------------------------------------------------- |
+| add(E e)                                     | 리스트의 끝에 지정된 요소를 추가한다                        |
+| add(int index, E element)                    | 리스트의 지정된 위치에 요소를 삽입한다                      |
+| addAll(Collection<? extends E> c)            | 지정된 컬렉션의 모든 요소를 리스트의 끝에 추가한다          |
+| addAll(int index, Collection<? extends E> c) | 지정된 컬렉션의 모든 요소를 리스트의 지정된 위치에 추가한다 |
+| get(int index)                               | 리스트에서 지정된 위치의 요소를 반환한다                    |
+| set(int index, E element)                    | 지정한 위치의 요소를 변경하고, 이전 요소를 반환한다         |
+| remove(int index)                            | 리스트에서 지정된 위치의 요소를 제거하고 그 요소를 반환한다 |
+| remove(Object o)                             | 리스트에서 지정된 첫 번째 요소를 제거한다                   |
+| clear()                                      | 리스트에서 모든 요소를 제거한다                             |
+| indexOf(Object o)                            | 리스트에서 지정된 요소의 첫 번째 인덱스를 반환한다          |
+| lastIndexOf(Object o)                        | 리스트에서 지정된 요소의 마지막 인덱스를 반환한다           |
+| contains(Object o)                           | 리스트가 지정된 요소를 포함하고 있는지 여부를 반환한다      |
+| sort(Comparator<? super E> c)                | 리스트의 요소를 지정된 비교자에 따라 정렬한다               |
+| subList(int fromIndex, int toIndex)          | 리스트의 일부분의 뷰를 반환한다                             |
+| size()                                       | 리스트의 요소 수를 반환한다                                 |
+| isEmpty()                                    | 리스트가 비어있는지 여부를 반환한다                         |
+| iterator()                                   | 리스트의 요소에 대한 반복자를 반환한다                      |
+| toArray()                                    | 리스트의 모든 요소를 배열로 반환한다                        |
+| toArray(T[] a)                               | 리스트의 모든 요소를 지정된 배열로 반환한다                 |
 
 
+
+## ArrayList란?
+
+- List 인터페이스를 상속받은 클래스로 크기가 가변적으로 변하는 선형자료구조 입니다.
 
 ### ArrayList의 특징 
 
@@ -81,8 +61,8 @@
 - 기본 CAPACITY(초기 용량)는 10입니다.
 - 메모리 고속 복사 연산을 사용한다.
 - 배열을 이용하기에 인덱스를 이용해 요소에 빠르게 접근할 수있습니다.
-- 크기가 고정되있는 배열과 다르넥 가변적으로 공간을 늘리거나 줄일 수있습니다
-- 중간 위치에 데이터를 추가하면, 추가할 위치 이후의 모든 요소를 한 칸씩 뒤로 이동시켜야 한다.
+- 크기가 고정되있는 배열과 다르게 가변적으로 공간을 늘리거나 줄일 수있습니다
+- **중간 위치에 데이터를 추가하면, 추가할 위치 이후의 모든 요소를 한 칸씩 뒤로 이동시켜야 한다.**
 
 
 
@@ -109,12 +89,11 @@ ArrayList<Integer> list3 = new ArrayList<>(list2);
 ### ArrayList의 요소 추가하기
 
 ```java
-
-boolean add(Object obj)
+boolean add(Object obj)
 => ArrayList의 마지막에 객체를 추가한다. 추가에 성공하면 true를 반환
 
 
-void addAll(Collection c)
+void addAll(Collection c)
 => 주어진 컬렉션의 모든 객체를 저장한다.(마지막 index의 뒤로 붙임)
 
 ```
@@ -156,24 +135,24 @@ public class ArrayListEx1 {
 - 요소의 삭제는 마지막에 있는 요소를 삭제하는 경우 O(1), 중간에 있는 요소를 삭제할 경우 O(n)의 시간복잡도를 가진다.
 
 ``` java
-Object remove(int index)
+Object remove(int index)
 지정된 위치(index)에 있는 객체를 제거한다.
 
 
-boolean remove(Object obj)
+boolean remove(Object obj)
 지정된 객체를 제거한다.(성공하면 true)
 
 
-boolean removeAll(Collection c)
-지정한 컬렉션에 저장된 것과 동일한 객체들을 ArrayList에서 제거한다.
+boolean removeAll(Collection c)
+지정한 컬렉션에 저장된 것과 동일한 객체들을 ArrayList에서 제거한다.
 
 
-void clear()
+void clear()
 ArrayList를 완전히 비운다.
 
 
-boolean retainAll(Collection c)
-ArrayList에 저장된 객체 중에서 주어진 컬렉션과 공통된 것들만 남기고 제거한다.(removeAll 반대 버전)
+boolean retainAll(Collection c)
+ArrayList에 저장된 객체 중에서 주어진 컬렉션과 공통된 것들만 남기고 제거한다.(removeAll 반대 버전)
 
 ```
 
@@ -195,7 +174,9 @@ ArrayList에 저장된 객체 중에서 주어진 컬렉션과 공통된 것들�
     }
 ```
 
-##### 삭제가 발생하는 구조를 표현한 그림
+
+
+#####  삭제가 발생하는 구조를 표현한 그림
 
 ![image](https://github.com/user-attachments/assets/1196f6b4-6a35-4e78-8643-775604f81cf7)
 
@@ -207,19 +188,19 @@ ArrayList에 저장된 객체 중에서 주어진 컬렉션과 공통된 것들�
 ### **ArrayList 검색**
 
 ``` java
-boolean isEmpty()
+boolean isEmpty()
 ArrayList가 비어있는지 확인한다.
 
 
-boolean contains(Object obj)
+boolean contains(Object obj)
 지정된 객체(obj)가 ArrayList에 포함되어 있는지 확인한다.
 
 
-int indexOf(Object obj)
+int indexOf(Object obj)
 지정된 객체(obj)가 저장된 위치를 찾아 반환한다.
 
 
-int lastIndexOf(Object obj)
+int lastIndexOf(Object obj)
 지정된 객체(obj)가 저장된 위치를 뒤에서 부터 역방향으로 찾아 반환한다.
 
 ```
@@ -255,16 +236,12 @@ true
 
 ### **ArrayList 인덱스 값 얻기**
 
-```
+```java
 Object get(in index)
 지정된 위치(index)에 저장된 객체를 반환한다.
-
-
+=================================
 List subList(int fromIndex, int toIndex)
 fromIndex부터 toIndex사이에 저장된 객체를 반환한다
-
-
-
 ```
 
 
@@ -336,15 +313,15 @@ System.out.println(list1); // [list1, setData, list1]
 ### **ArrayList 용량 확장**
 
 ``` java
-int size()
+int size()
 ArrayList에 저장된 객체의 개수를 반환한다.
 
 
-void ensureCapacity(int minCapacity)
+void ensureCapacity(int minCapacity)
 ArrayList의 용량이 최소한 minCapacity가 되도록 한다.
 
 
-void trimToSize()
+void trimToSize()
 용량의 크기에 맞게 줄인다 (빈 공간을 없앤다.)
 
 ```
@@ -399,11 +376,11 @@ System.out.println("Cloned ArrayList: " + cloneNumber); // [1, 3, 5]
 ### **ArrayList 배열 변환**
 
 ```
-Object[] toArray()
+Object[] toArray()
 ArrayList에 저장된 모든 객체들을 배열로 반환한다.
 
 
-Object[] toArray(Obejct[] objArr)
+Object[] toArray(Obejct[] objArr)
 ArrayList에 저장된 모든 객체들을 배열 objArr에 담아 반환한다.
 
 ```
@@ -444,14 +421,3 @@ System.out.println(list1); // [1, 2, 3]
 list1.sort(Comparator.reverseOrder());
 System.out.println(list1); // [3, 2, 1]
 ```
-
-
-
-
-
-
-
-
-
-
-
