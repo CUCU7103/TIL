@@ -39,7 +39,8 @@
 
 - **String, Lists, Sets, Sorted Sets, Hashes 등의 자료 구조를 지원합니다.**
 
-![image-20241203212011027](C:\typora-image\image-20241203212011027.png)
+![image](https://github.com/user-attachments/assets/58ca0167-5e00-42df-b57a-81a8aece9c1d)
+
 
 - **Single Threaded **
   - **단일 thread에서 모든 task 처리**
