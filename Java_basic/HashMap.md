@@ -1,7 +1,6 @@
 # Map이란?
 
-- key와 value를 한 쌍으로 갖는 자료구조입니다.
-
+- key와 value의 쌍으로 데이터를 저장하는 자료 구조입니다.
 - HashMap , TreeMap , LinkedHashMap등의 다양한 구현체를 제공합니다.
 
 ![image](https://github.com/user-attachments/assets/d98a2433-9a84-43b1-9c4b-049371955f49)
