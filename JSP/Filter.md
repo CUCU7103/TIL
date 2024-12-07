@@ -51,13 +51,13 @@ public class FirstFilter implements Filter {
 
 필터는 다음의 3가지 메서드로 구성된다.
 
-- `init()` : 
+- `init()` 
   - 필터 초기화 메서드, 서블릿 컨테이너가 생성될 때 호출된다.
-- `doFilter()` : 
+- `doFilter()` 
   - 필터 기능을 수행합니다. chain을 이용해서 체인의 다음 필터로 처리를 전달할 수 있습니다.
   - doFilter() 의 세 번째 파라미터로 FilterChain 객체를 전달받는다 이는 클라이어트의 요청이 거쳐가게 되는 필터 체인을 의미합니다.
   - FilteChain을 사용해서 필터는 체인에 있는 다른 필터에 변경한 요청과 응답을 전달할 수 있습니다.
-- `destroy()` : 
+- `destroy()` 
   - 필터 종료 메서드, 서블릿 컨테이너가 종료될 때 호출된다.
 
 
