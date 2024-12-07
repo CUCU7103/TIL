@@ -50,7 +50,7 @@
 
 - 사용자가 웹 브라우저를 통해 특정 URL로 요청을 보내면, 이 요청은 서블릿 컨테이너(예: Tomcat)에 의해 DispatcherServlet으로 전달됩니다.
 
-**요청 초기화 및 핸들러 매핑**
+**핸들러 매핑 진행**
 
 - DispatcherServlet은 `HandlerMapping`을 사용하여 들어온 요청 URL과 일치하는 컨트롤러(핸들러)를 찾습니다.
 - Spring은 여러 종류의 `HandlerMapping` 구현체(예: `RequestMappingHandlerMapping`)를 통해 요청과 적합한 핸들러를 매핑합니다.
