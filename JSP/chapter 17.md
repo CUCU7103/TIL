@@ -48,7 +48,7 @@ public class HtmlResponseServlet extends HttpServlet {
 
 ```
 
-
+<br>
 
 ### 서블릿의 동작과정
 
@@ -57,6 +57,8 @@ public class HtmlResponseServlet extends HttpServlet {
 
 1. **클라이언트 요청 (HTTP Request)**
    - 클라이언트(예: 브라우저)는 HTTP Request를 생성하여 웹 서버로 요청을 보냅니다.
+  
+<br>
 
 2. **웹 서버 or WAS**
 
@@ -65,6 +67,8 @@ public class HtmlResponseServlet extends HttpServlet {
    - 요청 URL 를 분석하고, 이 URL과 매핑된 서블릿 객체가 있는지 확인합니다.
 
    - 해당 요청은 **웹 컨테이너**로 전달됩니다.
+  
+<br>
 
 3. **웹 컨테이너** (서블릿 컨테이너)
 
@@ -82,6 +86,8 @@ public class HtmlResponseServlet extends HttpServlet {
 
      - 해당 서블릿이 아직 생성되지 않았다면, 서블릿 객체를 생성하고 `init()` 메서드를 호출합니다.
        - 이 과정을 서블릿 로딩이라고 합니다.
+
+<br>
 
    - **요청 처리**
 
@@ -111,7 +117,7 @@ public class HtmlResponseServlet extends HttpServlet {
 
        - 클라이언트는 최종적으로 응답 데이터를 수신합니다.
 
-
+<br>
 
 ### 서블릿의 생명주기
 
