@@ -1,12 +1,10 @@
 # JDBC (Java Database Connectivity)란?
 
-
-
 - JDBC(Java Database Connectivity)는 **자바 프로그래밍 언어를 사용해 데이터베이스에 접근할 수 있도록 하는 자바 API이다.**
 
 - 이를 통해서 데이터베이스에 접속하고, SQL을 실행하고, 데이터를 가져오거나 삭제하는 등 데이터를 다룰 수 있게 됩니다.
 
-  [![image](https://private-user-images.githubusercontent.com/107477191/390861267-a5c1ef21-5679-4dbc-b160-6791f0e58a3e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxMjY3LWE1YzFlZjIxLTU2NzktNGRiYy1iMTYwLTY3OTFmMGU1OGEzZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OTJjN2QwNmM1ODUxYWE5YTliOTM2ZDg2OTExZDJjNzkwZDg1NTZhMGRhMjYwMzIxMmY2ZDFjMWY2OGZjOWJjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.DtSKJeFlkxCQhbckNOsBPCpbZM873gzBjXKQ392UrLM)](https://private-user-images.githubusercontent.com/107477191/390861267-a5c1ef21-5679-4dbc-b160-6791f0e58a3e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxMjY3LWE1YzFlZjIxLTU2NzktNGRiYy1iMTYwLTY3OTFmMGU1OGEzZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OTJjN2QwNmM1ODUxYWE5YTliOTM2ZDg2OTExZDJjNzkwZDg1NTZhMGRhMjYwMzIxMmY2ZDFjMWY2OGZjOWJjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.DtSKJeFlkxCQhbckNOsBPCpbZM873gzBjXKQ392UrLM)
+  ![image-20241208174326485](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20241208174326485.png)
 
 ### JDBC에서의 트랜잭션
 
@@ -29,15 +27,15 @@
 
   - 연결된 db에 sql문을 전달하고 실행한 후 결과를 받아내는 객체
     - 완성된 SQL문을 실행할 수 있는 객체
-  -  Connection객체에 의해 프로그램에 구현되는 일종의 메소드 집합 
-  -  **Connection클래스의 createStatement()를 호출하여 객체 생성**
-  -  **Statement객체로 SQL문을 String객체로 담아 인자값으로 전달하여 질의 수행**
+  - Connection객체에 의해 프로그램에 구현되는 일종의 메소드 집합 
+  - **Connection클래스의 createStatement()를 호출하여 객체 생성**
+  - **Statement객체로 SQL문을 String객체로 담아 인자값으로 전달하여 질의 수행**
 
 - #### ResultSet
 
   -  SELECT문을 사용한 질의 성공시 반환되는 객체 
-    - 만일 실행한 SQL문이 SELECT문일 경우 조회된 결과가 result set객체에 들어감 
-  - SQL 질의에 해당하는 결과를 담고 있으며 '커서(CURSOR)'를 이용하여 특정 행에 대한 참조를 조작
+     - 만일 실행한 SQL문이 SELECT문일 경우 조회된 결과가 result set객체에 들어감 
+  -  SQL 질의에 해당하는 결과를 담고 있으며 '커서(CURSOR)'를 이용하여 특정 행에 대한 참조를 조작
 
 ### JDBC의 동작과정
 
@@ -47,7 +45,7 @@
 - JDBC가 제공하는 **DriverManager가 드라이버들을 관리하고** Connection을 획득하는 기능을 제공한다.
 - 이 획득한 Connection을 통해서 데이터베이스에 SQL을 실행하고 결과를 응답받을 수 있다.
 
-![image](https://private-user-images.githubusercontent.com/107477191/390861305-c60e8ef0-8485-489e-bb2a-742025452a5b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxMzA1LWM2MGU4ZWYwLTg0ODUtNDg5ZS1iYjJhLTc0MjAyNTQ1MmE1Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hOWU3ODFjNTM1MGQ0ZDExNGIwNzhiMzBkYmU3MTE0YjIyNmYzYWNiMzczNTExMjY1OTdkMjIzNGU4ZGEwNjhjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.5JKOskdsuSrVHbvYG__6_Eb_M8DLKdPWVhESP2nFcnE)]
+
 
 ```java
 import java.sql.*;
@@ -112,7 +110,7 @@ public class Jdbc {
 
 ### 진행 순서
 
-![image](https://private-user-images.githubusercontent.com/107477191/390861331-a681ffbc-939f-4290-9d76-e3837c97b479.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxMzMxLWE2ODFmZmJjLTkzOWYtNDI5MC05ZDc2LWUzODM3Yzk3YjQ3OS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yOGVkY2NkNGY0ODVlYTA3MTAxYjFiZTNmNjFlYjc3YTY5ZjQwMGMwNGVjYmNmZjZjMDczNTgzMDkxYTViY2M0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Tj8bYBlLQu83znDFX-XuX4hD1oIlcBwfqcvhCx_OwZI)
+![image-20241208174350890](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20241208174350890.png)
 
 ### 자원의 반납순서 
 
@@ -133,27 +131,37 @@ public class Jdbc {
   - `Statement`를 먼저 닫고 `ResultSet`을 닫으려고 하면, `ResultSet`은 이미 닫힌 `Statement`에 의존하므로 **`SQLException`**이 발생합니다.
   - 동일한 이유로, `Connection`을 먼저 닫고 `Statement`나 `ResultSet`을 닫으려 하면 오류가 발생하거나 자원이 제대로 닫히지 않을 수 있습니다.
 
-### 커넥션 풀
 
-- 커넥션이란?
-  - 데이터베이스와 연결되는 세션(Session)입니다.
-  - 애플리케이션과 데이터베이스 서버 간의 통신 링크를 의미합니다.
+
+## 커넥션이란?
+
+- **데이터베이스와 연결되는 세션(Session)입니다.**
+
+- **애플리케이션과 데이터베이스 서버 간의 통신 링크를 의미합니다.**
+
+  
+
 - 커넥션을 생성하는 과정
+
   - 애플리케이션에서 DB 드라이버를 통해 커넥션을 조회한다.
+
   - DB 드라이버는 DB와 TCP/IP 커넥션을 연결한다.
+
   - DB 드라이버는 TCP/IP 커넥션이 연결되면 아이디와 패스워드, 기타 부가 정보를 DB에 전달한다.
+
   - DB는 아이디, 패스워드를 통해 내부 인증을 거친 후 내부에 DB를 생성한다.
+
   - DB는 커넥션 생성이 완료되었다는 응답을 보낸다.
+
   - DB 드라이버는 커넥션을 생성해서 클라이언트에 반환한다
+
   - 커낵션 사용 후 해당 커넥션을 종료한다.
 
-[![image](https://private-user-images.githubusercontent.com/107477191/390861379-20df4a2d-cf12-45bd-b8f3-e07c8398076f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxMzc5LTIwZGY0YTJkLWNmMTItNDViZC1iOGYzLWUwN2M4Mzk4MDc2Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yMWQyNjA5N2M2MTJkOWU0NjkzM2FiMTY4NjViNzdhNzUwNzNkMTc4ODM0NmI0ZjM1YmEzZDFhMjg1NjhjMjNhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.SNGm3X2xJuystVheSDxV_a0o3FK7wXniK5bQKVXFX94)](https://private-user-images.githubusercontent.com/107477191/390861379-20df4a2d-cf12-45bd-b8f3-e07c8398076f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxMzc5LTIwZGY0YTJkLWNmMTItNDViZC1iOGYzLWUwN2M4Mzk4MDc2Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yMWQyNjA5N2M2MTJkOWU0NjkzM2FiMTY4NjViNzdhNzUwNzNkMTc4ODM0NmI0ZjM1YmEzZDFhMjg1NjhjMjNhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.SNGm3X2xJuystVheSDxV_a0o3FK7wXniK5bQKVXFX94)
+    
 
-- 매번 사용할때마다 커넥션을 생성하는 것은 네트워크와 서버의 자원을 매번 사용해야 합니다.
+- 매번 사용할 때마다 커넥션을 생성하는 것은 네트워크와 서버의 자원을 매번 사용해야 합니다.
 
-  - 이는 리소스의 낭비이자 비효율적입니다.
-
-  - 이러한 문제점을 해결하기 위해 커넥션 풀을 사용합니다.
+  - 이는 리소스의 낭비이자 비효율적이고 , 이러한 문제점을 해결하기 위해 커넥션 풀을 사용합니다.
 
   - 사용하는 네트워크의 자원
 
@@ -163,7 +171,7 @@ public class Jdbc {
 
 ## 커넥션 풀이란? (Connection pool)
 
-![image](https://private-user-images.githubusercontent.com/107477191/390861403-b49f989b-d7b5-42ed-810a-7cbc16646019.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzMyMjk4NTYsIm5iZiI6MTczMzIyOTU1NiwicGF0aCI6Ii8xMDc0NzcxOTEvMzkwODYxNDAzLWI0OWY5ODliLWQ3YjUtNDJlZC04MTBhLTdjYmMxNjY0NjAxOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIwM1QxMjM5MTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNDdjMDBlYzA1NTgzNTc1NGJkOWZlOTgwZGJjMmVkNGZiMTlkODNiMjk5MTA1YzhlZGJhNmRhYmMyYmJiMmQ3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Wdo_FngLmDekEbk5QDs5IgdopsiC-EuNNcU-B7gw3nU)
+![image-20241208174727432](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20241208174727432.png)
 
 - **Connection를 미리 생성하여 보관**하고 애플리케이션이 필요할 때 꺼내서 사용할 수 있도록 관리해 주는 것이 Connection Pool 입니다.
 - 또한 커넥션을 계속해서 재사용하기 때문에 생성되는 커넥션 수가 일정하게 유지되어집니다.
@@ -181,4 +189,8 @@ public class Jdbc {
 
 - 커넥션 풀을 효과적으로 사용하고 관리한다면 , 데이터베이스 연결의 비용을 최소화 하고 애플리케이션의 성능을 향상시킬 수있습니다.
   - 애플리케이션 로딩 시점에 미리 커넥션을 생성하기에 애플리케이션에서 데이터베이스 연결에 필요한 리소스가 줄어들어 성능이 향상됩니다.
-  - 데이터베이스 연결시 아이디와 패스워드, 기타 부가 정보를 DB에 전달해야합니다 이 과정을 미리 처리하여 커넥션을 생성하기에 데이터베이스 연결비용이 최소화 됩니다.
+  - How?
+    - 데이터베이스 연결시 아이디와 패스워드, 기타 부가 정보를 DB에 전달해야 하는데 이 과정을 미리 처리하여 커넥션을 생성하기에 데이터베이스 연결비용이 최소화 됩니다.
+    - 애플리케이션의 성능 향상은
+      - 매번 사용할 때마다 커넥션을 생성하는 것은 네트워크와 서버의 자원을 매번 사용해야 합니다
+      - 미리 커넥션 풀에 커넥션을 생성해 놓으면 TCP/IP 통신에서 3-way-handshake, 4-way-handshake가 매번 발생할 필요가 없습니다.
