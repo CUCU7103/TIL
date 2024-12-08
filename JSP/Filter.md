@@ -6,20 +6,23 @@
 
   클라이언트로 부터 들어오는 요청이나 서블릿이 처리한 응답을 각각 전달하기전에 특정 작업을 수행하는 재사용 가능한 코드 입니다.
 
+	- 즉 Servlet 요청(Request)와 응답(Response)의 처리 전후에 추가적인 작업을 수행하기 위해 설계된 구성 요소입니다. 주로 보안, 로깅, 데이터 압축 등의 기능을 처리합니다.
+
 - 클라이언트와 자원사이에 한 개의 필터만 존재할 수 있는 것은 아니며 여러 개의 필터가 모여 필터 체인을 형성할 수 도 있습니다.
 
-
+<br>
 
 ### 필터의 요청 흐름
 
 ![image](https://github.com/user-attachments/assets/257604f2-d367-46d6-8e96-766bb12aa0ca)
 
+<br>
 
 ### 필터의 구현
 
 - Filter 인터페이스
 
-  
+  <br>
 
 코드 예시
 
@@ -49,6 +52,8 @@ public class FirstFilter implements Filter {
 }
 ```
 
+<br>
+
 필터는 다음의 3가지 메서드로 구성된다.
 
 - `init()` 
@@ -61,7 +66,7 @@ public class FirstFilter implements Filter {
   - 필터 종료 메서드, 서블릿 컨테이너가 종료될 때 호출된다.
 
 
-
+<br>
 
 
 ### 필터 설정하기
