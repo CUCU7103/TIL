@@ -1,4 +1,4 @@
-# HttpserveltRequest/Response와 HttpSession 차이점
+# HttpservletRequest/Response와 HttpSession 차이점
 
 
 
