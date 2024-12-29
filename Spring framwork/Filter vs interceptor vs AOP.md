@@ -23,7 +23,7 @@
 
 **Interceptor** 
 
-- DispatcherServlet이 핸들러 목록에서 핸들러 매핑을 하고난 뒤 컨트롤러를 호출하기 전/후 요청에대해 부가적인 작업을 처리하는 객체입니다.
+- **DispatcherServlet이 핸들러 목록에서 핸들러 매핑을 하고난 뒤 컨트롤러를 호출하기 전/후 요청에대해 부가적인 작업을 처리하는 객체입니다.**
 - **DispatcherServlet과 Handler(Controller)사이에서 전/ 후로 인터셉터 말 그대로 낚아챌 수있습니다.**
 - **Filter와의 차이점은 Intercepter가 스프링의 기술이기 때문에 스프링에서 관리하는 빈들을 사용할 수 있다.**
 - **스프링 MVC 환경 내에서만 유효하며, HandlerMapping 에 의해 선택된 Handler(Controller) 전/후에 개입하는 형태로 동작한다.**
