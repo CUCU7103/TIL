@@ -71,6 +71,10 @@
    - Advice가 적용될 수 있는 위치
    - Spring에서는 메소드 조인포인트만 제공한다.
    -  타겟 객체가 구현한 모든 메소드는 조인 포인트가 된다.
+   -  join point에는 아래와 같은 6가지 시점이 존재합니다.
+
+  ![image](https://github.com/user-attachments/assets/c4f142d4-8ab5-42b9-832e-e4fd30869607)
+  
 
 6. Proxy
    - Target을 감싸서 Target의 요청을 대신 받아주는 랩핑 오브젝트.
