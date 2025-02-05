@@ -18,3 +18,8 @@
 
 - 즉 위의 내용을 통해 알 수있듯 **Spring Session은 세션 정보를 다양한 방식으로 관리하기 위한 추상화 계층을 제공하며 그 구현체 중 하나인 Spring Session Data Redis는 Redis를 사용해 Spring의 세션 정보를 저장하도록 돕습니다**.
   
+
+
+-- 참고한 블로그
+https://data-make.tistory.com/780
+https://ksh-coding.tistory.com/128
