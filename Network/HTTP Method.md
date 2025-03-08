@@ -1,8 +1,3 @@
-# HTTP Method
-
-### HTTP Method란 클라이언트와 서버 사이에 이루어지는 요청(request), 응답(response) 데이터를 전송하는 방식입니다.
-
-
 URI를 설계할때  가장 중요한 부분은 리소스를 식별하는 것이다.
 
 **즉 리소스와 행위를 분리해야 한다.**
@@ -10,9 +5,9 @@ URI를 설계할때  가장 중요한 부분은 리소스를 식별하는 것이
 정리하자면
 
 - URI는 리소스만 식별함.
-- **리소스와 해당 리소스를 대상으로 하는 행위를 분리한다.**
-    - 리소스 : 회원 (예시)
-    - 행위 : 조회, 등록, 삭제, 수정
+- 리소스와 해당 리소스를 대상으로 하는 행위를 분리한다.
+  - 리소스 : 회원 (예시)
+  - 행위 : 조회, 등록, 삭제, 수정
 
 그렇다면 이러한 행위는 어떻게 구분하는가?
 
@@ -20,113 +15,123 @@ URI를 설계할때  가장 중요한 부분은 리소스를 식별하는 것이
 
 http message에서 header 부분
 
-| 전송 형식 (Content-Type | 데이터 형식 | 사용 예시 |
-| --- | --- | --- |
-| application/x-www-form-urlencoded | key1=value1&key2=value2 | 웹 폼(form) 제출, 로그인 요청 등 |
-| application/json | { "key1": "value1" } | REST API 요청, AJAX 통신 등 |
-| multipart/form-data | 바이너리 데이터 및 파일 포함 가능 | 파일 업로드, 첨부파일 전송 등 |
-
-<br>
+| 전송 형식 (Content-Type           | 데이터 형식                       | 사용 예시                        |
+| --------------------------------- | --------------------------------- | -------------------------------- |
+| application/x-www-form-urlencoded | key1=value1&key2=value2           | 웹 폼(form) 제출, 로그인 요청 등 |
+| application/json                  | { "key1": "value1" }              | REST API 요청, AJAX 통신 등      |
+| multipart/form-data               | 바이너리 데이터 및 파일 포함 가능 | 파일 업로드, 첨부파일 전송 등    |
 
 # HTTP Method
 
 ### HTTP Method란 클라이언트와 서버 사이에 이루어지는 요청(request), 응답(response) 데이터를 전송하는 방식입니다.
 
 > **주요 메소드**
-> 
+>
 > - GET : 리소스 조회
 > - POST:  요청 데이터 처리, 주로 등록에 사용
 > - PUT : 리소스를 대체(덮어쓰기), 해당 리소스가 없으면 생성
 > - PATCH : 리소스 부분 변경 (PUT이 전체 변경, PATCH는 일부 변경)
 > - DELETE : 리소스 삭제
-> 
+>
 > **기타 메소드**
-> 
+>
 > - HEAD : GET과 동일하지만 메시지 부분(body 부분)을 제외하고, 상태 줄과 헤더만 반환
 > - OPTIONS : 대상 리소스에 대한 통신 가능 옵션(메서드)을 설명(주로 CORS에서 사용)
 > - CONNECT : 대상 자원으로 식별되는 서버에 대한 터널을 설정
 > - TRACE : 대상 리소스에 대한 경로를 따라 메시지 루프백 테스트를 수행
 
-
+------
 
 ## GET method
 
 - 리소스를 조회하는 메서드 입니다.
-
-  -  데이터를 읽거나(Read) 검색(Retrieve)할 때에 사용되는 메소드
-
+  - 데이터를 읽거나(Read) 검색(Retrieve)할 때에 사용되는 메소드
 - GET 요청은 멱등성이다.
-
 - GET 요청에서 서버에 데이터를 전달하는 경우 쿼리스트링을 통해서 데이터를 전달합니다.
 
+![image-20250309021738011](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20250309021738011.png)
+
 - GET은 캐싱이 가능하여 같은 데이터를 한번 더 조회할 경우에 저장한 값을 사용해 조회속도를 보장합니다.
-
-- **정적 데이터 조회 과정**
-
+- 정적 데이터 조회 과정
   - 이미지, 정적 텍스트 문서 GET
   - 쿼리 파라미터 없이 리소스 경로로 단순하게 조회 가능
-
-  
-
-- **동적 데이터 조회 과정**
-
+- 동적 데이터 조회 과정
   - 주로 검색, 게시판 목록에서 검색어로 이용
-
   - 쿼리 파라미터 사용해서 데이터를 전달
-
   - 쿼리 파라미터는 key1=value1&key2=value2 구조로 되어 있음
 
-
+------
 
 ## **POST method**
 
 - **전달한 데이터 처리/생성 요청 메서드 (Create)**
-- 메시지 바디(body)를 통해 서버로 요청 데이터 전달하면 서버는 요청 데이터를 처리하여 업데이트
+
+- 메시지 바디(body)를 통해 서버로 요청 데이터 전달하면 서버는 요청 데이터를 처리합니다.
+
 - 전달된 데이터로 주로 신규 리소스 등록, 프로세스 처리에 사용
-  - 데이터를 **메세지 바디에 쿼리 파라미터 형식으로 전달**합니다.
-    - 쿼리 파라미터는 key - value 형식으로 되어 있습니다.
-    - 이는 GET 방식과 비교하면, 데이터가 외부로 노출되지 않으므로, 보안상의 이점이 있습니다.
-- 만일 데이터를 GET 하는데 있어, JSON으로 조회 데이터를 넘겨야 하는 애매한 경우 POST를 사용
 
+  - 데이터를 Body에 key-value 형식으로 전달합니다.
 
+    - 헤더의 전송방식에 따라 정해지는데 주로 2가지 방식을 사용합니다.
+
+      - application/x-www-form-urlencoded
+
+        - 가장 흔한 POST 요청의 데이터 전달 방식입니다.
+        - 요청 본문에서 **key-value** 형식으로 데이터를 인코딩하여 전송합니다
+        - 요청 본문에서 **key-value** 형식으로 데이터를 인코딩하여 전송합니다.
+
+        ```java
+        username=johndoe&password=secure123
+        ```
+
+      - application/json
+
+        - 최근 웹 서비스에서 가장 많이 사용되는 데이터 형식입니다.
+        - JSON 형식으로 데이터를 직렬화하여 전송하며, key-value 구조로 구성됩니다.
+
+        ```java
+        { 
+        	"username": "johndoe", 
+        	"password": "secure123"
+        }
+        ```
+
+------
 
 ## **PUT method**
 
 - **리소스를 대체(수정)하는 메서드 (Update)**
+
 - **URI에 작업대상 리소스의 경로를 명시합니다.**
+
 - **만일 요청 메세지에 리소스가 있으면 덮어쓰고, 없으면 새로 생성한다**.
+
   - /members/100 데이터가 존재하면 기존에 것을 완전 대체 한다.
   - /members/100 데이터가 없으면 대체 할게 없으니까 새로 생성한다.
 
 - 데이터를 대체해야 하니, 클라이언트가 리소스의 구체적인 전체 경로를 지정해 보내주어야 한다.
+
   - POST /members : 멤버 새로 추가
   - PUT /members/100 : 100번째 멤버 수정
 
 - PUT 요청에 해당하는 리소스가 있는 경우
 
-  ![image-20241121004327177](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004327177.png)
-
-  ![image-20241121004344042](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004344042.png)
-
   - 기존에 있는 데이터를 완전히 대체한다.
 
-    
+  ![image-20250309021810777](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20250309021810777.png)
 
 - PUT 요청에 해당하는 리소스가 없는 경우
 
-  ![image-20241121004411232](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004411232.png)
-
-  ![image-20241121004423915](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004423915.png)
-
   - 기존의 데이터가 없다면 POST와 같이 신규로 생성한다.
 
-- PUT 요청에 일부 리소스만 변경하길 원하는 경우?
+  ![image-20250309021825166](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20250309021825166.png)
 
-  - ![image-20241121004536660](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004536660.png)
-  - ![image-20241121004548071](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004548071.png)
-  - 기존 데이터가 완전히 대체되어집니다. 즉 위의 예시에서는 useraname 데이터가 삭제되어 집니다.
+- 추가적으로 PUT 요청은 일부 데이터만 대체할 수없다.
 
-## **PATCH **
+  - 기존 데이터가 완전히 대체되어집니다.
+  - 즉 위의 예시에서는 useraname 데이터가 삭제되어 집니다.
+
+## **PATCH**
 
 - **리소스 일부 부분을 변경하는 메소드** **(Update)**
 
@@ -134,9 +139,7 @@ http message에서 header 부분
 
 - Petch 요청에서 일부 리소스만 변경하려고 할때
 
-  ![image-20241121004720850](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004720850.png)
-
-![image-20241121004729595](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004729595.png)
+  ![image-20250309021842372](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20250309021842372.png)
 
 - PUT과는 다르게 기존 리소스는 유지하면서 변경 요청한 부분만 수정되어진다.
 
@@ -151,20 +154,12 @@ http message에서 header 부분
 - 응답의 상태 코드만 확인할때와 같이 Resource를 받지 않고 오직 찾기만 원할때 사용 (일종의 검사 용도)
 - 서버의 응답 헤더를 봄으로써 Resource가 수정 되었는지 확인 가능
 
-![image-20241121004933435](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121004933435.png)
-
-
-
 ## **TRACE method**
 
 - 일종의 검사용 메서드이다.
 - 서버에 도달 했을 때의 최종 패킷의 요청 패킷 내용을 응답 받을 수 있다.
 - 요청의 최종 수신자는 반드시 송신자에게 200(OK) 응답의 내용(Body)로 수신한 메세지를 반송해야 한다.
 - 최초 Client의 요청에는 Body가 포함될 수 없다.
-
-![image-20241121005054232](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121005054232.png)
-
-
 
 ## **OPTION**
 
@@ -173,16 +168,12 @@ http message에서 header 부분
   - 본 요청을 하기 전에 해당 경로가 안전한지 미리 검사하는 것입니다.
 - 서버의 지원 가능한 HTTP 메서드와 출처를 응답 받아 [CORS 정책Visit Website]을 검사하기 위한 요청이다.
 
+## HTTP Method의 속성
 
-
-![image-20241121005229537](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121005229537.png)
-
-
+![image-20250309021902183](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20250309021902183.png)
 
 # 멱등성
 
-> [!NOTE]
->
 > **동일한 요청을 여러 번 수행해도 서버의 상태나 응답이 동일하게 유지되는 특성을 말합니다**
 >
 > **즉 , 멱등한 작업의 결과는 한 번 수행하든 여러 번 수행하든 같습니다.**
@@ -191,34 +182,26 @@ http message에서 header 부분
 >
 > - 서버가 특정 시점에 보유하고 있는 데이터나, 리소스의 현재 상태를 의미합니다.
 
-![image-20241121010839433](https://github.com/CUCU7103/typora_images/blob/main/image/image-20241121010839433.png)
+![image-20250309021917103](https://raw.githubusercontent.com/CUCU7103/save-image-repo/main/image/image-20250309021917103.png)
 
+### **PUT method (멱등함)**
 
+**설명:**
 
-
-
-### **PUT 메서드 (멱등함)**
-
-**설명:** 
-
-- 리소스를 전체적으로 대체할 때 사용됩니다. 
+- 리소스를 전체적으로 대체할 때 사용됩니다.
 - 여러번 호출해도 매번 같은 리소스로 업데이트 되기 때문에 결과가 달라지지 않습니다.
-
 - **같은 데이터를 여러 번 PUT 요청으로 보내도 서버의 상태는 동일하게 유지됩니다.**
-
-
 
 ### **POST 메서드 (멱등하지 않음)**
 
-**설명:** 
+**설명:**
 
-- 서버에 새로운 리소스를 생성하거나, 서버 상태를 변경하는 작업에 사용됩니다. 
-
+- **서버에 새로운 리소스를 생성하거나, 서버 상태를 변경하는 작업에 사용됩니다.**
 - **여러 번 호출하면 보내면 리소스가 중복 생성**되거나 서버의 상태에 변화를 일으킬 수있습니다.
 
+<aside> 💡
 
-
-멱등성의 관점에서 두 메서드를 비교해보면 결국 가장 명확한 차이는 리소스의 중복생성입니다.
+멱등성의 관점에서 두 메서드를 비교해보면 결국 **가장 명확한 차이는 리소스의 중복생성입니다**.
 
 Post의 경우 요청을 보낼때마다 리소스를 생성하고 이는 중복되는 리소스를 만들수 있기에 서버의 상태를 변화시킬 수있습니다.
 
@@ -226,7 +209,4 @@ Put의 경우 새로운 리소스를 생성하거나, 리소스가 존재한다�
 
 즉 여러번의 요청을 보낸다고해도 리소스를 계속 업데이트 하기에 서버의 상태에 변화를 주지 않습니다.
 
-
-
-
-
+</aside>
