@@ -1,251 +1,162 @@
-## 연산자
 
-### 1. 기본적인 연산자
+# Java 연산자(Operator) 정리
 
-  - 대입 연산자 **=**
-    - 변수에 값을 대입할 때 사용하는 연산자이다.
+## 1. 기본 연산자
 
-  - 산술 연산자
-    1. "+" : 더하기 연산자
-    2. "-" : 빼기 연산자
-    3. "*" : 곱하기 연산자
-    4. "/" : 나누기 연산자
-    5. "%" : 나머지 연산자
+### 1) 대입 연산자 (=)
+- 변수에 값을 저장할 때 사용
 
-**"+ , -"**
+### 2) 산술 연산자
+
+| 연산자 | 의미     |
+| :----: | :------ |
+|   +    | 더하기   |
+|   -    | 빼기     |
+|   *    | 곱하기   |
+|   /    | 나누기   |
+|   %    | 나머지   |
+
+
+
+
+#### 예시: +, -
 ```java
-
-public class OperatorPlusMinus {
-  public static void main(String args[]) {
-    OperatorPlusMinus sample = new OperatorPlusMinus();
-    sample.additive();
-  }
- 
- 
- public void additive(){
-     int intValue1 = 5; 
-     int intValue2 = 10;
- 
-     int result = intValue1 + intValue2 ;
-     System.out.println(result);
-     result = intValue2 - intValue1;
-     System.out.println(result);
- }
-// 결과
- // 15
- // 5
-}
+int a = 5, b = 10;
+System.out.println(a + b); // 15
+System.out.println(b - a); // 5
 ```
 
-**" * ,/ "**
+#### 예시: *, /
 
 ```java
-
-public class OperatorMutipleDivision {
-  public static void main(String args[]) {
-    OperatorMutipleDivision sample = new OperatorMutipleDivision();
-    sample.mutipleDivision();
-  }
- 
- public void mutipleDivision(){
-     int intValue1 = 5;
-     int intValue2 = 10;
-     
-     int result = intValue1 * intValue2;
-     System.out.println(result);
-     result = intValue2 / intValue1;
-      System.out.println(result);
-     
- }
- // 결과
-// 50
-// 2 
-}
-
-// 만일 result에서 intValue1 / intValue2 를 하면?
-// 0.5가 나와야되지만 int는 정수형만 표현 할 수 있기 때문에 0 이됨
-// double 이나 float를 사용해서 연산해야 된다.
-
+int a = 5, b = 10;
+System.out.println(a * b); // 50
+System.out.println(b / a); // 2
+// int 타입끼리 나누면 소수점 이하 버림
+// 실수 결과가 필요하면 double이나 float 사용 필요
 ```
 
-**" % "**
+#### 예시: %
+
 ```java
-
-public class OperatorReminder {
-  public static void main(String args[]) {
-    OperatorReminder sample = new OperatorReminder();
-    sample.reminder();
-  }
- 
- public void reminder(){
-     int intValue1 = 53;
-     int intValue2 = 10;
-     
-     int result = intValue1 % intValue2;
-     System.out.println(result);
-     
- }
-
-// 결과 3
-// 나머지 값을 구하는 연산자이다.
-}
+int a = 53, b = 10;
+System.out.println(a % b); // 3
 ```
 
-### 2. 복합 대입 연산자
+---
+
+## 2. 복합 대입 연산자
+
+- 산술 연산자와 대입 연산자를 결합한 형태
+
+| 연산자 | 예시   | 의미      |
+| :----: | :----- | :-------- |
+|   +=   | x += 5 | x = x + 5 |
+|   -=   | x -= 5 | x = x - 5 |
+|   *=   | x *= 5 | x = x * 5 |
+|   /=   | x /= 5 | x = x / 5 |
+|   %=   | x %= 5 | x = x % 5 |
+
+#### 예시 코드
 
 ```java
-
-int intValue = 10;
-intvValue = intValue + 5
-
-// 위와 같은 계산을 아래와 같이 변경할 수 있다.
-// intValue에 5를 더한것을 intValue에 할당하라.
-intValue += 5;
-
-
-
+int value = 10;
+value += 5;  // 15
+value -= 5;  // 10
+value *= 5;  // 50
+value /= 5;  // 10
+value %= 5;  // 0
 ```
 
-- 복합대입연산자 
+---
 
-![image](https://github.com/user-attachments/assets/d7f1e9a4-dfe7-4ba1-a93d-e3a0640727d2)
+## 3. 단항 연산자
 
+### 1) 부호 연산자
+
+- `+`, `-` : 값의 부호를 바꿉니다.
+
+### 2) 증감 연산자 (`++`, `--`)
+
+- 변수의 값을 1씩 증가/감소
 
 ```java
-
- public void compond(){
-    int intValue = 10;
-    intValue += 5;
-    System.out.println(intValue);
-    intValue -= 5;
-    System.out.println(intValue);
-    intValue *= 5;
-    System.out.println(intValue);
-    intValue /= 5;
-    System.out.println(intValue);
-    intValue %= 5;
-    System.out.println(intValue);
-
-}
-
-// 결과
-15
-10
-50
-10
-0
-
+int v = 1;
+System.out.println(v++); // 1 (출력 후 1 증가, v=2)
+System.out.println(v);   // 2
+System.out.println(++v); // 3 (증가 후 출력)
 ```
 
-### 3. 단항연산자
+### 3) 부정 연산자 (`!`)
 
-1. 부호 연산자
-   
-    ![image](https://github.com/user-attachments/assets/cfaf8108-6679-41b0-b14c-a81db58b311c)
-
-2. 증감 연산자
-   - "++" , "--" 
+- boolean 값을 반대로 만듦
 
 ```java
-
-  int intValue = 10
-  intValue = intValue + 1;
-  intValue = intValue - 2;
-
-// 위 코드를 아래와 같이 변경할 수 있다.
-  intValue++;
-  intValue--;
-
+boolean flag = true;
+System.out.println(!flag); // false
 ```
- - 증감 연산자는 변수의 앞이나 뒤에 붙을 수 있다.
-   
-```java
 
-public class OperatorIncrement {
-  public static void main(String args[]) {
-    OperatorIncrement sample = new OperatorIncrement();
-    //sample.reminder();
-    sample.increment();
-  }
- 
-    public void increment(){
-        int value = 1;
-        System.out.println(value++); // 변수를 참조한 후에 1 증가
-        System.out.println(value); 
-        System.out.println(++value); // 변수를 참조하기 전에 1 증가
+---
+
+## 4. 연산자 우선순위
+
+1. 단항 연산자 (`++`, `--`, `+`, `-`, `!`, `~`)
+2. 산술 연산자 (`*`, `/`, `%`)
+3. 산술 연산자 (`+`, `-`)
+
+---
+
+## 5. 비교 연산자
+
+| 연산자 | 의미        | 사용 가능 타입 |
+| :----: | :---------- | :------------- |
+|   ==   | 같다        | 모든 타입      |
+|   !=   | 같지 않다   | 모든 타입      |
+|   >    | 크다        | 숫자           |
+|   <    | 작다        | 숫자           |
+|   >=   | 크거나 같다 | 숫자           |
+|   <=   | 작거나 같다 | 숫자           |
+
+- 결과는 항상 boolean (true/false)
+
+---
+
+## 6. 논리 연산자
+
+| 연산자 | 의미     | 예시                   |
+| :----: | :------- | :--------------------- |
+|   &&   | 논리 AND | (a > 0) && (b < 5)     |
+|  \|\|  | 논리 OR  | (a == 1) \|\| (b == 2) |
+|   !    | 논리 NOT | !(a == b)              |
+
+---
+
+## 7. 삼항 연산자
+
+- `변수 = (조건식) ? 참일 때 값 : 거짓일 때 값;`
+
+```java
+int score = 80;
+String pass = (score >= 60) ? "합격" : "불합격";
+System.out.println(pass); // "합격"
+```
+
+---
+
+## 예제: 조건에 따른 처리
+
+```java
+public class OperatorConditionalTriple {
+    public static void main(String[] args) {
+        doBlindDate(30);
+        doBlindDate(80);
     }
-
-}
-
-```
-
-
-3. 부정 연산자 
-
-**" ! "**
-  - boolean type에서만 이 연산자를 사용한다.
-
-![image](https://github.com/user-attachments/assets/4b9ffe45-38c5-493b-b4cb-9099b15416ca)
-
-
-### 계산하는 순서
-
-  1. 단항연산자 (++,--,+,-,! ~)
-  2. 산술연산자 ( *,/,%)
-  3. 산술연산자 (+,-)
-
-
-### 비교 연산자
-
-  - 모든 비교 연산자의 결과는 반드시 boolean 형이여야 한다.
-  - 등가비교 연산자는 모든 타입에서 사용이 가능하다.
-  - 대소비교 연산자는 숫자에서만 사용이 가능하다.
-    -- 참조형이나, boolean에서는 사용이 불가하다.
-   
-![image](https://github.com/user-attachments/assets/9629a8e0-3598-47b1-93c5-cec6ab1ed4cf)
-
-
-### 논리 연산자
-
- - 논리 연산자는 주어진 논리식을 판단하여 참과 거짓을 결정한다.
-
-![image](https://github.com/user-attachments/assets/e9e473ab-b7f2-40f0-92d2-51585a78819a)
-
-
-![image](https://github.com/user-attachments/assets/1b73e657-bf56-4e26-ad79-19283a1899ac)
-
-
-### 삼항 연산자
-
-- ``` 변수 = 조건식 ?  true 일때 값 : false 일때 값;```
-
-```java
-
-public class OperatorConditionalTriple{
-  public static void main(String args[]) {
-    OperatorConditionalTriple sample = new OperatorConditionalTriple();
-    sample.doBlindDate(30);
-    sample.doBlindDate(80);    
-
-  }
- 
-    public boolean doBlindDate(int point){
-        boolean doBlindDateFlag = false;
-        doBlindDateFlag = (point >= 80) ? true : false;
+    public static void doBlindDate(int point) {
+        boolean doBlindDateFlag = (point >= 80) ? true : false;
         System.out.println(point + " : " + doBlindDateFlag);
-        return doBlindDateFlag;
     }
-
 }
-
 // 결과
 // 30 : false
 // 80 : true
-
 ```
-
-
-
-
-
-       
